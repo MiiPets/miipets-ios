@@ -1,0 +1,6 @@
+framework module Pods_MiiPetsTests {
+  umbrella header "Pods-MiiPetsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

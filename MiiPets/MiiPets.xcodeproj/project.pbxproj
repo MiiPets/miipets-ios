@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40DE20D2962C780B022A2058 /* Pods_MiiPetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EFC6F81370BA40A6130C93 /* Pods_MiiPetsTests.framework */; };
+		4FB5CD7D2F5C87761817DD76 /* Pods_MiiPets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E02636AFDAC6738018B3280 /* Pods_MiiPets.framework */; };
+		869EDA1722E79710007F50BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869EDA1622E79710007F50BC /* Assets.xcassets */; };
+		869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EDA1822E79838007F50BC /* UIColor+Extensions.swift */; };
+		86EA6D2022E4AF3600B2578D /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA6D1F22E4AF3600B2578D /* MainNavigationController.swift */; };
+		86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA6D2222E4B18100B2578D /* UIViewController+Extensions.swift */; };
+		86FA034922E368AB0047905C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA034822E368AB0047905C /* AppDelegate.swift */; };
+		86FA035322E368AC0047905C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FA035122E368AC0047905C /* LaunchScreen.storyboard */; };
+		86FA035E22E368AC0047905C /* MiiPetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA035D22E368AC0047905C /* MiiPetsTests.swift */; };
+		86FA036F22E374910047905C /* LandingTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */; };
+		86FA037222E3793E0047905C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FA037122E3793E0047905C /* Main.storyboard */; };
+		86FA037422E3799E0047905C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037322E3799E0047905C /* HomeViewController.swift */; };
+		86FA037622E379B20047905C /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037522E379B20047905C /* RewardsViewController.swift */; };
+		86FA037822E379D30047905C /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037722E379D30047905C /* NotificationsViewController.swift */; };
+		86FA037A22E379E60047905C /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037922E379E60047905C /* PetsViewController.swift */; };
+		86FA037C22E379FC0047905C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037B22E379FC0047905C /* ProfileViewController.swift */; };
+		86FA037E22E46BA70047905C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FA037D22E46BA70047905C /* Colors.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86FA035A22E368AC0047905C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86FA033D22E368AA0047905C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86FA034422E368AA0047905C;
+			remoteInfo = MiiPets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11EFC6F81370BA40A6130C93 /* Pods_MiiPetsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiiPetsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ACF5C0A6ACD407175D9613B /* Pods-MiiPetsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPetsTests.release.xcconfig"; path = "Target Support Files/Pods-MiiPetsTests/Pods-MiiPetsTests.release.xcconfig"; sourceTree = "<group>"; };
+		1E02636AFDAC6738018B3280 /* Pods_MiiPets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiiPets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EAEA55B922510DFD165352E /* Pods-MiiPets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPets.release.xcconfig"; path = "Target Support Files/Pods-MiiPets/Pods-MiiPets.release.xcconfig"; sourceTree = "<group>"; };
+		774C1266DD1715AD877786FA /* Pods-MiiPets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPets.debug.xcconfig"; path = "Target Support Files/Pods-MiiPets/Pods-MiiPets.debug.xcconfig"; sourceTree = "<group>"; };
+		869EDA1622E79710007F50BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		869EDA1822E79838007F50BC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		86EA6D1F22E4AF3600B2578D /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		86EA6D2222E4B18100B2578D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		86FA034522E368AB0047905C /* MiiPets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiiPets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86FA034822E368AB0047905C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		86FA035222E368AC0047905C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		86FA035422E368AC0047905C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86FA035922E368AC0047905C /* MiiPetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiiPetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86FA035D22E368AC0047905C /* MiiPetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiiPetsTests.swift; sourceTree = "<group>"; };
+		86FA035F22E368AC0047905C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingTabBarControllerViewController.swift; sourceTree = "<group>"; };
+		86FA037122E3793E0047905C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		86FA037322E3799E0047905C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		86FA037522E379B20047905C /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
+		86FA037722E379D30047905C /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		86FA037922E379E60047905C /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
+		86FA037B22E379FC0047905C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		86FA037D22E46BA70047905C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		EB7C28FF195F028282FD725A /* Pods-MiiPetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPetsTests.debug.xcconfig"; path = "Target Support Files/Pods-MiiPetsTests/Pods-MiiPetsTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86FA034222E368AA0047905C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FB5CD7D2F5C87761817DD76 /* Pods_MiiPets.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FA035622E368AC0047905C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40DE20D2962C780B022A2058 /* Pods_MiiPetsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54BDA733C049CA8C45090028 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E02636AFDAC6738018B3280 /* Pods_MiiPets.framework */,
+				11EFC6F81370BA40A6130C93 /* Pods_MiiPetsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86EA6D2122E4B15900B2578D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				86EA6D2222E4B18100B2578D /* UIViewController+Extensions.swift */,
+				869EDA1822E79838007F50BC /* UIColor+Extensions.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		86FA033C22E368AA0047905C = {
+			isa = PBXGroup;
+			children = (
+				86FA034722E368AB0047905C /* MiiPets */,
+				86FA035C22E368AC0047905C /* MiiPetsTests */,
+				86FA034622E368AB0047905C /* Products */,
+				A50BCEEB943FF10A5CED8B03 /* Pods */,
+				54BDA733C049CA8C45090028 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		86FA034622E368AB0047905C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86FA034522E368AB0047905C /* MiiPets.app */,
+				86FA035922E368AC0047905C /* MiiPetsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86FA034722E368AB0047905C /* MiiPets */ = {
+			isa = PBXGroup;
+			children = (
+				86FA034822E368AB0047905C /* AppDelegate.swift */,
+				869EDA1622E79710007F50BC /* Assets.xcassets */,
+				86FA037D22E46BA70047905C /* Colors.xcassets */,
+				86FA035122E368AC0047905C /* LaunchScreen.storyboard */,
+				86FA035422E368AC0047905C /* Info.plist */,
+				86FA037122E3793E0047905C /* Main.storyboard */,
+				86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */,
+				86EA6D1F22E4AF3600B2578D /* MainNavigationController.swift */,
+				86FA036C22E36E360047905C /* Profile */,
+				86FA036B22E36E310047905C /* Pets */,
+				86FA036A22E36E220047905C /* Notifications */,
+				86FA036922E36DEB0047905C /* Rewards */,
+				86FA036822E36DE10047905C /* Home */,
+				86EA6D2122E4B15900B2578D /* Categories */,
+			);
+			path = MiiPets;
+			sourceTree = "<group>";
+		};
+		86FA035C22E368AC0047905C /* MiiPetsTests */ = {
+			isa = PBXGroup;
+			children = (
+				86FA035D22E368AC0047905C /* MiiPetsTests.swift */,
+				86FA035F22E368AC0047905C /* Info.plist */,
+			);
+			path = MiiPetsTests;
+			sourceTree = "<group>";
+		};
+		86FA036822E36DE10047905C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				86FA037322E3799E0047905C /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		86FA036922E36DEB0047905C /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				86FA037522E379B20047905C /* RewardsViewController.swift */,
+			);
+			path = Rewards;
+			sourceTree = "<group>";
+		};
+		86FA036A22E36E220047905C /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				86FA037722E379D30047905C /* NotificationsViewController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		86FA036B22E36E310047905C /* Pets */ = {
+			isa = PBXGroup;
+			children = (
+				86FA037922E379E60047905C /* PetsViewController.swift */,
+			);
+			path = Pets;
+			sourceTree = "<group>";
+		};
+		86FA036C22E36E360047905C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				86FA037B22E379FC0047905C /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A50BCEEB943FF10A5CED8B03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				774C1266DD1715AD877786FA /* Pods-MiiPets.debug.xcconfig */,
+				1EAEA55B922510DFD165352E /* Pods-MiiPets.release.xcconfig */,
+				EB7C28FF195F028282FD725A /* Pods-MiiPetsTests.debug.xcconfig */,
+				1ACF5C0A6ACD407175D9613B /* Pods-MiiPetsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86FA034422E368AA0047905C /* MiiPets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86FA036222E368AC0047905C /* Build configuration list for PBXNativeTarget "MiiPets" */;
+			buildPhases = (
+				BD682D7920A44C43C9A027EE /* [CP] Check Pods Manifest.lock */,
+				86FA034122E368AA0047905C /* Sources */,
+				86FA034222E368AA0047905C /* Frameworks */,
+				86FA034322E368AA0047905C /* Resources */,
+				3B4DDE39ACDD0B5013FED227 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiiPets;
+			productName = MiiPets;
+			productReference = 86FA034522E368AB0047905C /* MiiPets.app */;
+			productType = "com.apple.product-type.application";
+		};
+		86FA035822E368AC0047905C /* MiiPetsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86FA036522E368AC0047905C /* Build configuration list for PBXNativeTarget "MiiPetsTests" */;
+			buildPhases = (
+				AECDFE675A733395B10626BF /* [CP] Check Pods Manifest.lock */,
+				86FA035522E368AC0047905C /* Sources */,
+				86FA035622E368AC0047905C /* Frameworks */,
+				86FA035722E368AC0047905C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86FA035B22E368AC0047905C /* PBXTargetDependency */,
+			);
+			name = MiiPetsTests;
+			productName = MiiPetsTests;
+			productReference = 86FA035922E368AC0047905C /* MiiPetsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86FA033D22E368AA0047905C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = MiiPets;
+				TargetAttributes = {
+					86FA034422E368AA0047905C = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					86FA035822E368AC0047905C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 86FA034422E368AA0047905C;
+					};
+				};
+			};
+			buildConfigurationList = 86FA034022E368AA0047905C /* Build configuration list for PBXProject "MiiPets" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 86FA033C22E368AA0047905C;
+			productRefGroup = 86FA034622E368AB0047905C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86FA034422E368AA0047905C /* MiiPets */,
+				86FA035822E368AC0047905C /* MiiPetsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86FA034322E368AA0047905C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86FA035322E368AC0047905C /* LaunchScreen.storyboard in Resources */,
+				86FA037E22E46BA70047905C /* Colors.xcassets in Resources */,
+				869EDA1722E79710007F50BC /* Assets.xcassets in Resources */,
+				86FA037222E3793E0047905C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FA035722E368AC0047905C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B4DDE39ACDD0B5013FED227 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MiiPets/Pods-MiiPets-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MiiPets/Pods-MiiPets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AECDFE675A733395B10626BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiiPetsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD682D7920A44C43C9A027EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiiPets-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86FA034122E368AA0047905C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86FA037822E379D30047905C /* NotificationsViewController.swift in Sources */,
+				869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */,
+				86FA036F22E374910047905C /* LandingTabBarControllerViewController.swift in Sources */,
+				86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */,
+				86EA6D2022E4AF3600B2578D /* MainNavigationController.swift in Sources */,
+				86FA037622E379B20047905C /* RewardsViewController.swift in Sources */,
+				86FA034922E368AB0047905C /* AppDelegate.swift in Sources */,
+				86FA037C22E379FC0047905C /* ProfileViewController.swift in Sources */,
+				86FA037A22E379E60047905C /* PetsViewController.swift in Sources */,
+				86FA037422E3799E0047905C /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FA035522E368AC0047905C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86FA035E22E368AC0047905C /* MiiPetsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86FA035B22E368AC0047905C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86FA034422E368AA0047905C /* MiiPets */;
+			targetProxy = 86FA035A22E368AC0047905C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		86FA035122E368AC0047905C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86FA035222E368AC0047905C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		86FA036022E368AC0047905C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		86FA036122E368AC0047905C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86FA036322E368AC0047905C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 774C1266DD1715AD877786FA /* Pods-MiiPets.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RKD4RGN726;
+				INFOPLIST_FILE = MiiPets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.miipets.App.MiiPets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86FA036422E368AC0047905C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EAEA55B922510DFD165352E /* Pods-MiiPets.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RKD4RGN726;
+				INFOPLIST_FILE = MiiPets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.miipets.App.MiiPets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		86FA036622E368AC0047905C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB7C28FF195F028282FD725A /* Pods-MiiPetsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RKD4RGN726;
+				INFOPLIST_FILE = MiiPetsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.miipets.App.MiiPetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiiPets.app/MiiPets";
+			};
+			name = Debug;
+		};
+		86FA036722E368AC0047905C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ACF5C0A6ACD407175D9613B /* Pods-MiiPetsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RKD4RGN726;
+				INFOPLIST_FILE = MiiPetsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.miipets.App.MiiPetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiiPets.app/MiiPets";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		86FA034022E368AA0047905C /* Build configuration list for PBXProject "MiiPets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86FA036022E368AC0047905C /* Debug */,
+				86FA036122E368AC0047905C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86FA036222E368AC0047905C /* Build configuration list for PBXNativeTarget "MiiPets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86FA036322E368AC0047905C /* Debug */,
+				86FA036422E368AC0047905C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86FA036522E368AC0047905C /* Build configuration list for PBXNativeTarget "MiiPetsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86FA036622E368AC0047905C /* Debug */,
+				86FA036722E368AC0047905C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 86FA033D22E368AA0047905C /* Project object */;
+}

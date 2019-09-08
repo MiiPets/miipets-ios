@@ -1,0 +1,6 @@
+# Merging tools
+*.swp
+
+# Xcode
+.DS_Store
+xcuserdata

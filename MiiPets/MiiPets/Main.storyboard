@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="10I-ri-u8t">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing Tab Bar Controller View Controller-->
+        <scene sceneID="vvI-fi-gSa">
+            <objects>
+                <tabBarController id="10I-ri-u8t" customClass="LandingTabBarControllerViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="QJE-ZG-s0Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="miipets_green"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="tHo-O4-zFA" kind="relationship" relationship="viewControllers" id="h32-yt-eJK"/>
+                        <segue destination="Fca-qP-au0" kind="relationship" relationship="viewControllers" id="wzv-qm-8z4"/>
+                        <segue destination="gaE-8m-dTS" kind="relationship" relationship="viewControllers" id="I8q-31-vhP"/>
+                        <segue destination="Qf9-uX-de8" kind="relationship" relationship="viewControllers" id="aa2-6G-5ec"/>
+                        <segue destination="uJJ-pP-BOb" kind="relationship" relationship="viewControllers" id="ETz-25-q5S"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wNs-3t-tMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1033" y="-218"/>
+        </scene>
+        <!--Rewards View Controller-->
+        <scene sceneID="lGw-CE-YW8">
+            <objects>
+                <viewController id="9cI-b3-xk1" customClass="RewardsViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KOf-uW-Bmr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="e2O-JN-JVE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zx5-rq-vfy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21A-AC-tlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="142"/>
+        </scene>
+        <!--Notifications View Controller-->
+        <scene sceneID="p4E-qc-EnA">
+            <objects>
+                <viewController id="03w-Mg-0Zo" customClass="NotificationsViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bD3-ZD-miT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7os-SP-U3I"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t6q-Mr-GZN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUx-ed-scf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-149" y="855"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="dxl-4s-xhU">
+            <objects>
+                <navigationController id="tHo-O4-zFA" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notifications" image="tabbar_notifications" selectedImage="tabbar_notifications" id="FVz-pD-pOc">
+                        <color key="badgeColor" name="miipets_green"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jcW-8b-DHm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="03w-Mg-0Zo" kind="relationship" relationship="rootViewController" id="dFC-Gs-pph"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SIX-vE-WKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1033" y="856"/>
+        </scene>
+        <!--Rewards-->
+        <scene sceneID="SEX-Vb-v9A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fca-qP-au0" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Rewards" image="tabbar_rewards" selectedImage="tabbar_rewards" id="lZ0-mB-1LG">
+                        <color key="badgeColor" name="miipets_green"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g6h-jU-39r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9cI-b3-xk1" kind="relationship" relationship="rootViewController" id="LsS-wT-4SD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L0D-eI-JpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19" y="142"/>
+        </scene>
+        <!--Pets View Controller-->
+        <scene sceneID="osX-qu-YnE">
+            <objects>
+                <viewController id="tp5-C0-iI9" customClass="PetsViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xig-8o-OgV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vNI-Th-cHc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="E9W-Hy-z4M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YdF-tq-EyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="-1540"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="GY3-jN-tmv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gaE-8m-dTS" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="tabbar_home" selectedImage="tabbar_home" id="jrh-q2-L2c">
+                        <color key="badgeColor" name="miipets_green"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wde-Bt-wGe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Xo-Cv-pq4" kind="relationship" relationship="rootViewController" id="uBg-b9-vWG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEe-wu-9x4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="-583"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="xQe-YB-txA">
+            <objects>
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="3Xo-Cv-pq4" customClass="HomeViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dJr-Nt-O8X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="3Xo-Cv-pq4" id="UMu-9G-snh"/>
+                            <outlet property="delegate" destination="3Xo-Cv-pq4" id="j07-aF-wCC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="F9T-Fg-vAL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJ3-Zx-Ios" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="-583"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="zc8-Xq-u8I">
+            <objects>
+                <viewController id="BMv-hd-GXt" customClass="ProfileViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="urH-0X-gFk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7mL-uN-o1t"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ljw-JA-K8N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DkH-eU-InR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123" y="-1270"/>
+        </scene>
+        <!--Pets-->
+        <scene sceneID="Jpq-K2-G35">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qf9-uX-de8" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pets" image="tabbar_pets" selectedImage="tabbar_pets" id="mgN-vg-CWk">
+                        <color key="badgeColor" name="miipets_green"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kXT-7M-VAH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tp5-C0-iI9" kind="relationship" relationship="rootViewController" id="0A7-Zw-TKX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GkM-vb-kp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="-1539"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="SO9-SM-Dkj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uJJ-pP-BOb" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="tabbar_profile" selectedImage="tabbar_profile" id="fFB-m8-fQv">
+                        <color key="badgeColor" name="miipets_green"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tYF-kO-tEQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BMv-hd-GXt" kind="relationship" relationship="rootViewController" id="z5n-HK-ano"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdT-LF-DVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1033" y="-1270"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_home" width="30" height="30"/>
+        <image name="tabbar_notifications" width="30" height="30"/>
+        <image name="tabbar_pets" width="30" height="30"/>
+        <image name="tabbar_profile" width="30" height="30"/>
+        <image name="tabbar_rewards" width="30" height="30"/>
+        <namedColor name="miipets_green">
+            <color red="0.0" green="0.47843137254901963" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
