@@ -135,7 +135,6 @@
 		86FA034722E368AB0047905C /* MiiPets */ = {
 			isa = PBXGroup;
 			children = (
-				86CE3AD72332AD9700399104 /* UI components */,
 				86FA034822E368AB0047905C /* AppDelegate.swift */,
 				869EDA1622E79710007F50BC /* Assets.xcassets */,
 				86FA037D22E46BA70047905C /* Colors.xcassets */,
@@ -146,10 +145,11 @@
 				86EA6D1F22E4AF3600B2578D /* MainNavigationController.swift */,
 				86FA036C22E36E360047905C /* Profile */,
 				86FA036B22E36E310047905C /* Pets */,
-				86FA036A22E36E220047905C /* Notifications */,
+				86FA036A22E36E220047905C /* Connect */,
 				86FA036922E36DEB0047905C /* Rewards */,
 				86FA036822E36DE10047905C /* Home */,
 				86EA6D2122E4B15900B2578D /* Categories */,
+				86CE3AD72332AD9700399104 /* UI components */,
 			);
 			path = MiiPets;
 			sourceTree = "<group>";
@@ -179,12 +179,12 @@
 			path = Rewards;
 			sourceTree = "<group>";
 		};
-		86FA036A22E36E220047905C /* Notifications */ = {
+		86FA036A22E36E220047905C /* Connect */ = {
 			isa = PBXGroup;
 			children = (
 				86FA037722E379D30047905C /* ConnectViewController.swift */,
 			);
-			path = Notifications;
+			path = Connect;
 			sourceTree = "<group>";
 		};
 		86FA036B22E36E310047905C /* Pets */ = {
