@@ -5,6 +5,7 @@ class ConnectViewController: UITableViewController {
     // MARK: Constants
     
     let kContainerCellReuseIdentifier = "ContainerCellReuseIdentifier"
+    let kTitleHeaderFooterViewReuseIdentifier = "TitleHeaderFooterViewReuseIdentifier"
     
     // MARK: View Lifecycle
 
@@ -15,7 +16,7 @@ class ConnectViewController: UITableViewController {
         self.registerViewsAndCells()
     }
     
-    // MARK: Styling
+    // MARK: Configuration and styling
     
     private func style() {
         self.view.backgroundColor = UIColor.white
@@ -26,6 +27,7 @@ class ConnectViewController: UITableViewController {
     
     private func registerViewsAndCells() {
         self.tableView.register(ConnectLandingCotainerTableViewCell.self, forCellReuseIdentifier: kContainerCellReuseIdentifier)
+        self.tableView.register(LandingTitleHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: kTitleHeaderFooterViewReuseIdentifier)
     }
 }
 
@@ -47,5 +49,37 @@ extension ConnectViewController {
         }
         
         return cell
+    }
+}
+
+// MARK: UITableViewDelegate
+
+extension ConnectViewController {
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40.0
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        return 100.0
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 100.0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: kTitleHeaderFooterViewReuseIdentifier) as? LandingTitleHeaderFooterView else {
+            return nil
+        }
+        
+        header.setTitle("MiiConnect")
+        header.updateTopPadding()
+        
+        return header
     }
 }
