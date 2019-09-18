@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="929" y="142"/>
         </scene>
-        <!--Notifications View Controller-->
+        <!--Connect View Controller-->
         <scene sceneID="p4E-qc-EnA">
             <objects>
-                <viewController id="03w-Mg-0Zo" customClass="NotificationsViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="03w-Mg-0Zo" customClass="ConnectViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bD3-ZD-miT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

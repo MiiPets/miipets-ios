@@ -20,7 +20,7 @@
 		86FA037222E3793E0047905C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FA037122E3793E0047905C /* Main.storyboard */; };
 		86FA037422E3799E0047905C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037322E3799E0047905C /* HomeViewController.swift */; };
 		86FA037622E379B20047905C /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037522E379B20047905C /* RewardsViewController.swift */; };
-		86FA037822E379D30047905C /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037722E379D30047905C /* NotificationsViewController.swift */; };
+		86FA037822E379D30047905C /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037722E379D30047905C /* ConnectViewController.swift */; };
 		86FA037A22E379E60047905C /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037922E379E60047905C /* PetsViewController.swift */; };
 		86FA037C22E379FC0047905C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037B22E379FC0047905C /* ProfileViewController.swift */; };
 		86FA037E22E46BA70047905C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FA037D22E46BA70047905C /* Colors.xcassets */; };
@@ -57,7 +57,7 @@
 		86FA037122E3793E0047905C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		86FA037322E3799E0047905C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		86FA037522E379B20047905C /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
-		86FA037722E379D30047905C /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		86FA037722E379D30047905C /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		86FA037922E379E60047905C /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
 		86FA037B22E379FC0047905C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		86FA037D22E46BA70047905C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		86FA036A22E36E220047905C /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				86FA037722E379D30047905C /* NotificationsViewController.swift */,
+				86FA037722E379D30047905C /* ConnectViewController.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -381,7 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86FA037822E379D30047905C /* NotificationsViewController.swift in Sources */,
+				86FA037822E379D30047905C /* ConnectViewController.swift in Sources */,
 				869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */,
 				86FA036F22E374910047905C /* LandingTabBarControllerViewController.swift in Sources */,
 				86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */,

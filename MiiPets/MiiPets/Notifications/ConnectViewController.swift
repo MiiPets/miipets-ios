@@ -1,6 +1,6 @@
 import UIKit
 
-class NotificationsViewController: UIViewController {
+class ConnectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
