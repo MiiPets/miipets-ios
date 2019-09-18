@@ -4,7 +4,7 @@ class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
     
     // MARK: Constants
     
-    static let kAdjustedTopPadding: CGFloat = 70.0
+    static let kAdjustedTopPadding: CGFloat = 75.0
     
     // MARK: Properties
     
