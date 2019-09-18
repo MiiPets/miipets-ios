@@ -1,6 +1,6 @@
 import UIKit
 
-class ConnectViewController: UIViewController {
+class ConnectViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
