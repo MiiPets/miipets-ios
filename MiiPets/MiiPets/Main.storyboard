@@ -64,11 +64,11 @@
             </objects>
             <point key="canvasLocation" x="-149" y="855"/>
         </scene>
-        <!--Notifications-->
+        <!--Connect-->
         <scene sceneID="dxl-4s-xhU">
             <objects>
                 <navigationController id="tHo-O4-zFA" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notifications" image="tabbar_notifications" selectedImage="tabbar_notifications" id="FVz-pD-pOc">
+                    <tabBarItem key="tabBarItem" title="Connect" image="tabbar_notifications" selectedImage="tabbar_notifications" id="FVz-pD-pOc">
                         <color key="badgeColor" name="miipets_green"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jcW-8b-DHm">
