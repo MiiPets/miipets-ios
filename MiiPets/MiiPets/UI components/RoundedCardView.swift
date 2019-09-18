@@ -8,7 +8,7 @@ class RoundedCardView: UIView {
     
     // MARK: Properties
     
-    private lazy var containerView: UIView = {
+    lazy var containerView: UIView = {
         let container = UIView(frame: .zero)
         container.translatesAutoresizingMaskIntoConstraints = false
         
@@ -32,9 +32,8 @@ class RoundedCardView: UIView {
     
     // MARK: View lifecycle
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
         self.addShadow()
     }
     
@@ -42,6 +41,7 @@ class RoundedCardView: UIView {
     
     private func style() {
         self.backgroundColor = .clear
+        self.containerView.backgroundColor = .white
     }
     
     private func addAndLayoutContainerView() {
@@ -59,9 +59,9 @@ class RoundedCardView: UIView {
     }
     
     private func addShadow() {
-        self.layer.shadowColor = UIColor.lightGray.cgColor
-        self.layer.shadowOffset = .zero
-        self.layer.shadowOpacity = 0.5
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.layer.shadowOpacity = 0.3
         self.layer.shadowRadius = 5
     }
 }

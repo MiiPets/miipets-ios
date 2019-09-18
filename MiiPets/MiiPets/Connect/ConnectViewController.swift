@@ -25,7 +25,7 @@ class ConnectViewController: UITableViewController {
     // MARK: UITableView
     
     private func registerViewsAndCells() {
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: kContainerCellReuseIdentifier)
+        self.tableView.register(ConnectLandingCotainerTableViewCell.self, forCellReuseIdentifier: kContainerCellReuseIdentifier)
     }
     
     // MARK: UITableViewDataSource
@@ -39,7 +39,7 @@ class ConnectViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: kContainerCellReuseIdentifier) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: kContainerCellReuseIdentifier) as? ConnectLandingCotainerTableViewCell else {
             return UITableViewCell()
         }
         
