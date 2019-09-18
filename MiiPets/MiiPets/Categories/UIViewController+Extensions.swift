@@ -2,7 +2,7 @@ import UIKit
 
 extension UIViewController {
     
-    var topAnchorConstant: CGFloat {
+    private var topAnchorConstant: CGFloat {
         if self is UITableViewController {
             return 50.0
         }
@@ -10,7 +10,7 @@ extension UIViewController {
         return 10.0
     }
     
-    var miiPetsImageViewHeightConstraint: CGFloat {
+    private var miiPetsImageViewHeightConstraint: CGFloat {
         return self.view.frame.width / 2.1
     }
     

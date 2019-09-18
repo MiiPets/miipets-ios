@@ -27,8 +27,11 @@ class ConnectViewController: UITableViewController {
     private func registerViewsAndCells() {
         self.tableView.register(ConnectLandingCotainerTableViewCell.self, forCellReuseIdentifier: kContainerCellReuseIdentifier)
     }
-    
-    // MARK: UITableViewDataSource
+}
+
+// MARK: UITableViewDataSource
+
+extension ConnectViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
