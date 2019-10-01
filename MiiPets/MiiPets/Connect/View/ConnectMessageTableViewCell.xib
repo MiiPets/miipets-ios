@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="334" id="KGk-i7-Jjw" customClass="ConnectMessageTableViewCell" customModule="MiiPets" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="464" height="334"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="426" height="333.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test-profile-picture" translatesAutoresizingMaskIntoConstraints="NO" id="8Ua-UT-uf7">
+                        <rect key="frame" x="34" y="15" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="YJm-Rt-AdL"/>
+                            <constraint firstAttribute="width" constant="40" id="hgu-JE-nFw"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCE-vc-dGj">
+                        <rect key="frame" x="15" y="70" width="78" height="31.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="78" id="GWn-7s-JiB"/>
+                        </constraints>
+                        <string key="text">Posted:
+25 Sep 2019</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stefan Werner Bouwer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C62-Hx-Cbv">
+                        <rect key="frame" x="108" y="15" width="303" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="szd-e9-yu6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9yV-pg-Y8d">
+                        <rect key="frame" x="108" y="50" width="303" height="268.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I think my cat's leg is broken" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zJ-xS-Ok0">
+                                <rect key="frame" x="0.0" y="0.0" width="303" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="jbf-JM-ApX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat-broken-leg" translatesAutoresizingMaskIntoConstraints="NO" id="pnx-SN-Uob">
+                                <rect key="frame" x="0.0" y="27" width="303" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="xxO-RA-COC"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEE-9y-g0i">
+                                <rect key="frame" x="0.0" y="212" width="303" height="56.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6U-jQ-PWc">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="56.5"/>
+                                        <mutableString key="text">My cat got its leg trapped in a door and his leg is swollen. It's the leg on the upper part of the picture. When it first happened he could put a little bit of pressure on it but now its swollen and won't put any pressure on it. I have given him some food and he can walk but he limps. He doesn't seem to be in pain but when I touch his leg he screams. For this reason I have not felt the leg to see if it's broken. He also has a small cut on the side of his leg where he trapped it in the door. I was wondering if anyone could tell me if it's broken and tell me what to do other than take him to the vet tomorrow.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21j-os-TFW">
+                                        <rect key="frame" x="223" y="28.5" width="80" height="28"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Show more...">
+                                            <color key="titleColor" name="miipets_green"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="21j-os-TFW" secondAttribute="trailing" id="6SM-3q-GIa"/>
+                                    <constraint firstAttribute="bottom" secondItem="21j-os-TFW" secondAttribute="bottom" id="6sp-M4-suJ"/>
+                                    <constraint firstItem="r6U-jQ-PWc" firstAttribute="leading" secondItem="sEE-9y-g0i" secondAttribute="leading" id="7hZ-e1-LCH"/>
+                                    <constraint firstItem="r6U-jQ-PWc" firstAttribute="top" secondItem="sEE-9y-g0i" secondAttribute="top" id="BQa-Lz-J2A"/>
+                                    <constraint firstAttribute="bottom" secondItem="r6U-jQ-PWc" secondAttribute="bottom" id="axa-tH-e4s"/>
+                                    <constraint firstAttribute="trailing" secondItem="r6U-jQ-PWc" secondAttribute="trailing" id="o4l-2i-HQy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sCE-vc-dGj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="6UV-LT-6jx"/>
+                    <constraint firstAttribute="bottom" secondItem="9yV-pg-Y8d" secondAttribute="bottom" constant="15" id="GWu-PV-aPm"/>
+                    <constraint firstAttribute="trailing" secondItem="9yV-pg-Y8d" secondAttribute="trailing" constant="15" id="NE0-wP-a5Z"/>
+                    <constraint firstItem="sCE-vc-dGj" firstAttribute="top" secondItem="8Ua-UT-uf7" secondAttribute="bottom" constant="15" id="SRH-fG-Nvq"/>
+                    <constraint firstItem="9yV-pg-Y8d" firstAttribute="top" secondItem="C62-Hx-Cbv" secondAttribute="bottom" constant="15" id="W4l-bw-1f3"/>
+                    <constraint firstItem="8Ua-UT-uf7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ZDg-k1-UbI"/>
+                    <constraint firstAttribute="trailing" secondItem="C62-Hx-Cbv" secondAttribute="trailing" constant="15" id="ZaD-3b-j1Y"/>
+                    <constraint firstItem="9yV-pg-Y8d" firstAttribute="leading" secondItem="sCE-vc-dGj" secondAttribute="trailing" constant="15" id="gbW-iZ-Tp2"/>
+                    <constraint firstItem="8Ua-UT-uf7" firstAttribute="centerX" secondItem="sCE-vc-dGj" secondAttribute="centerX" id="rFr-Ol-6nj"/>
+                    <constraint firstItem="C62-Hx-Cbv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ruT-Uc-kGl"/>
+                    <constraint firstItem="C62-Hx-Cbv" firstAttribute="leading" secondItem="sCE-vc-dGj" secondAttribute="trailing" constant="15" id="xaa-Zc-W39"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="detailContainerStackView" destination="9yV-pg-Y8d" id="I8O-0F-nMX"/>
+                <outlet property="detailDescriptionContainerView" destination="sEE-9y-g0i" id="Nbl-FO-egP"/>
+                <outlet property="detailDescriptionLabel" destination="r6U-jQ-PWc" id="KHh-Dy-uGu"/>
+                <outlet property="detailDescriptionShowMoreButton" destination="21j-os-TFW" id="QZo-1j-VUd"/>
+                <outlet property="detailImageView" destination="pnx-SN-Uob" id="lhK-Fp-6bW"/>
+                <outlet property="detailTitleLabel" destination="5zJ-xS-Ok0" id="Mfp-NE-8Cj"/>
+                <outlet property="postedByLabel" destination="C62-Hx-Cbv" id="pQU-9n-Alg"/>
+                <outlet property="postedDateLabel" destination="sCE-vc-dGj" id="upf-tW-gKd"/>
+                <outlet property="profilePicture" destination="8Ua-UT-uf7" id="pyo-gN-YeK"/>
+            </connections>
+            <point key="canvasLocation" x="236.23188405797103" y="135.9375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cat-broken-leg" width="670" height="375"/>
+        <image name="test-profile-picture" width="255" height="340"/>
+        <namedColor name="miipets_green">
+            <color red="0.0" green="0.47843137254901963" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

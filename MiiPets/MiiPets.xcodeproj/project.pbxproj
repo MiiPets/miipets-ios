@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		40DE20D2962C780B022A2058 /* Pods_MiiPetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EFC6F81370BA40A6130C93 /* Pods_MiiPetsTests.framework */; };
 		4FB5CD7D2F5C87761817DD76 /* Pods_MiiPets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E02636AFDAC6738018B3280 /* Pods_MiiPets.framework */; };
+		8615AFFF2343F03100F7FAB6 /* ConnectSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8615AFFE2343F03100F7FAB6 /* ConnectSummaryViewController.swift */; };
 		869EDA1722E79710007F50BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869EDA1622E79710007F50BC /* Assets.xcassets */; };
 		869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EDA1822E79838007F50BC /* UIColor+Extensions.swift */; };
+		86CACDFF2343D64400445CD7 /* ConnectMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CACDFD2343D64400445CD7 /* ConnectMessageTableViewCell.swift */; };
+		86CACE002343D64400445CD7 /* ConnectMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CACDFE2343D64400445CD7 /* ConnectMessageTableViewCell.xib */; };
 		86CE3AD92332ADCE00399104 /* RoundedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE3AD82332ADCE00399104 /* RoundedCardView.swift */; };
 		86CE3ADF2332B64E00399104 /* ConnectLandingCotainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE3ADE2332B64E00399104 /* ConnectLandingCotainerTableViewCell.swift */; };
 		86CE3AE12332C61900399104 /* LandingTitleHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE3AE02332C61900399104 /* LandingTitleHeaderFooterView.swift */; };
@@ -45,8 +48,11 @@
 		1E02636AFDAC6738018B3280 /* Pods_MiiPets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiiPets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAEA55B922510DFD165352E /* Pods-MiiPets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPets.release.xcconfig"; path = "Target Support Files/Pods-MiiPets/Pods-MiiPets.release.xcconfig"; sourceTree = "<group>"; };
 		774C1266DD1715AD877786FA /* Pods-MiiPets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPets.debug.xcconfig"; path = "Target Support Files/Pods-MiiPets/Pods-MiiPets.debug.xcconfig"; sourceTree = "<group>"; };
+		8615AFFE2343F03100F7FAB6 /* ConnectSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSummaryViewController.swift; sourceTree = "<group>"; };
 		869EDA1622E79710007F50BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		869EDA1822E79838007F50BC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		86CACDFD2343D64400445CD7 /* ConnectMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectMessageTableViewCell.swift; sourceTree = "<group>"; };
+		86CACDFE2343D64400445CD7 /* ConnectMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectMessageTableViewCell.xib; sourceTree = "<group>"; };
 		86CE3AD82332ADCE00399104 /* RoundedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCardView.swift; sourceTree = "<group>"; };
 		86CE3ADE2332B64E00399104 /* ConnectLandingCotainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectLandingCotainerTableViewCell.swift; sourceTree = "<group>"; };
 		86CE3AE02332C61900399104 /* LandingTitleHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingTitleHeaderFooterView.swift; sourceTree = "<group>"; };
@@ -99,6 +105,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8615AFFD2343EFC800F7FAB6 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8615AFFE2343F03100F7FAB6 /* ConnectSummaryViewController.swift */,
+			);
+			path = "View controllers";
+			sourceTree = "<group>";
+		};
 		86CE3AD72332AD9700399104 /* UI components */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				86CE3ADE2332B64E00399104 /* ConnectLandingCotainerTableViewCell.swift */,
+				86CACDFD2343D64400445CD7 /* ConnectMessageTableViewCell.swift */,
+				86CACDFE2343D64400445CD7 /* ConnectMessageTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +211,7 @@
 		86FA036A22E36E220047905C /* Connect */ = {
 			isa = PBXGroup;
 			children = (
+				8615AFFD2343EFC800F7FAB6 /* View controllers */,
 				86CE3ADD2332B62400399104 /* View */,
 				86FA037722E379D30047905C /* ConnectViewController.swift */,
 			);
@@ -314,6 +331,7 @@
 			files = (
 				86FA035322E368AC0047905C /* LaunchScreen.storyboard in Resources */,
 				86FA037E22E46BA70047905C /* Colors.xcassets in Resources */,
+				86CACE002343D64400445CD7 /* ConnectMessageTableViewCell.xib in Resources */,
 				869EDA1722E79710007F50BC /* Assets.xcassets in Resources */,
 				86FA037222E3793E0047905C /* Main.storyboard in Resources */,
 			);
@@ -406,12 +424,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8615AFFF2343F03100F7FAB6 /* ConnectSummaryViewController.swift in Sources */,
 				86FA037822E379D30047905C /* ConnectViewController.swift in Sources */,
 				869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */,
 				86CE3AD92332ADCE00399104 /* RoundedCardView.swift in Sources */,
 				86FA036F22E374910047905C /* LandingTabBarControllerViewController.swift in Sources */,
 				86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */,
 				86EA6D2022E4AF3600B2578D /* MainNavigationController.swift in Sources */,
+				86CACDFF2343D64400445CD7 /* ConnectMessageTableViewCell.swift in Sources */,
 				86FA037622E379B20047905C /* RewardsViewController.swift in Sources */,
 				86CE3AE12332C61900399104 /* LandingTitleHeaderFooterView.swift in Sources */,
 				86FA034922E368AB0047905C /* AppDelegate.swift in Sources */,
