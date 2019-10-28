@@ -70,7 +70,7 @@
         <!--Connect-->
         <scene sceneID="dxl-4s-xhU">
             <objects>
-                <navigationController id="tHo-O4-zFA" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="tHo-O4-zFA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Connect" image="tabbar_notifications" selectedImage="tabbar_notifications" id="FVz-pD-pOc">
                         <color key="badgeColor" name="miipets_green"/>
                     </tabBarItem>
@@ -89,7 +89,7 @@
         <!--Rewards-->
         <scene sceneID="SEX-Vb-v9A">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fca-qP-au0" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fca-qP-au0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Rewards" image="tabbar_rewards" selectedImage="tabbar_rewards" id="lZ0-mB-1LG">
                         <color key="badgeColor" name="miipets_green"/>
                     </tabBarItem>
@@ -126,7 +126,7 @@
         <!--Home-->
         <scene sceneID="GY3-jN-tmv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gaE-8m-dTS" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gaE-8m-dTS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="tabbar_home" selectedImage="tabbar_home" id="jrh-q2-L2c">
                         <color key="badgeColor" name="miipets_green"/>
                     </tabBarItem>
@@ -182,7 +182,7 @@
         <!--Pets-->
         <scene sceneID="Jpq-K2-G35">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qf9-uX-de8" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qf9-uX-de8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pets" image="tabbar_pets" selectedImage="tabbar_pets" id="mgN-vg-CWk">
                         <color key="badgeColor" name="miipets_green"/>
                     </tabBarItem>
@@ -203,7 +203,7 @@
         <!--Profile-->
         <scene sceneID="SO9-SM-Dkj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uJJ-pP-BOb" customClass="MainNavigationController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uJJ-pP-BOb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="tabbar_profile" selectedImage="tabbar_profile" id="fFB-m8-fQv">
                         <color key="badgeColor" name="miipets_green"/>
                     </tabBarItem>

@@ -16,6 +16,16 @@ class ConnectViewController: UITableViewController {
         self.registerViewsAndCells()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     // MARK: Configuration and styling
     
     private func style() {
@@ -49,6 +59,11 @@ extension ConnectViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = ConnectSummaryViewController(style: .grouped)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

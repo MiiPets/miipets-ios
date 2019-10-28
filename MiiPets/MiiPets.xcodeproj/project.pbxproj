@@ -17,7 +17,6 @@
 		86CE3AD92332ADCE00399104 /* RoundedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE3AD82332ADCE00399104 /* RoundedCardView.swift */; };
 		86CE3ADF2332B64E00399104 /* ConnectLandingCotainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE3ADE2332B64E00399104 /* ConnectLandingCotainerTableViewCell.swift */; };
 		86CE3AE12332C61900399104 /* LandingTitleHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE3AE02332C61900399104 /* LandingTitleHeaderFooterView.swift */; };
-		86EA6D2022E4AF3600B2578D /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA6D1F22E4AF3600B2578D /* MainNavigationController.swift */; };
 		86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA6D2222E4B18100B2578D /* UIViewController+Extensions.swift */; };
 		86FA034922E368AB0047905C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA034822E368AB0047905C /* AppDelegate.swift */; };
 		86FA035322E368AC0047905C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FA035122E368AC0047905C /* LaunchScreen.storyboard */; };
@@ -56,7 +55,6 @@
 		86CE3AD82332ADCE00399104 /* RoundedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCardView.swift; sourceTree = "<group>"; };
 		86CE3ADE2332B64E00399104 /* ConnectLandingCotainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectLandingCotainerTableViewCell.swift; sourceTree = "<group>"; };
 		86CE3AE02332C61900399104 /* LandingTitleHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingTitleHeaderFooterView.swift; sourceTree = "<group>"; };
-		86EA6D1F22E4AF3600B2578D /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		86EA6D2222E4B18100B2578D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		86FA034522E368AB0047905C /* MiiPets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiiPets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FA034822E368AB0047905C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 				86FA035422E368AC0047905C /* Info.plist */,
 				86FA037122E3793E0047905C /* Main.storyboard */,
 				86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */,
-				86EA6D1F22E4AF3600B2578D /* MainNavigationController.swift */,
 				86FA036C22E36E360047905C /* Profile */,
 				86FA036B22E36E310047905C /* Pets */,
 				86FA036A22E36E220047905C /* Connect */,
@@ -430,7 +427,6 @@
 				86CE3AD92332ADCE00399104 /* RoundedCardView.swift in Sources */,
 				86FA036F22E374910047905C /* LandingTabBarControllerViewController.swift in Sources */,
 				86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */,
-				86EA6D2022E4AF3600B2578D /* MainNavigationController.swift in Sources */,
 				86CACDFF2343D64400445CD7 /* ConnectMessageTableViewCell.swift in Sources */,
 				86FA037622E379B20047905C /* RewardsViewController.swift in Sources */,
 				86CE3AE12332C61900399104 /* LandingTitleHeaderFooterView.swift in Sources */,
