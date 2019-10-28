@@ -46,7 +46,7 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9yV-pg-Y8d">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9yV-pg-Y8d">
                         <rect key="frame" x="108" y="50" width="303" height="268.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I think my cat's leg is broken" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zJ-xS-Ok0">
@@ -69,16 +69,19 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6U-jQ-PWc">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="56.5"/>
-                                        <mutableString key="text">My cat got its leg trapped in a door and his leg is swollen. It's the leg on the upper part of the picture. When it first happened he could put a little bit of pressure on it but now its swollen and won't put any pressure on it. I have given him some food and he can walk but he limps. He doesn't seem to be in pain but when I touch his leg he screams. For this reason I have not felt the leg to see if it's broken. He also has a small cut on the side of his leg where he trapped it in the door. I was wondering if anyone could tell me if it's broken and tell me what to do other than take him to the vet tomorrow.</mutableString>
+                                        <string key="text">My cat got its leg trapped in a door and his leg is swollen. It's the leg on the upper part of the picture. When it first happened he could put a little bit of pressure on it but now its swollen and won't put any pressure on it. I have given him some food and he can walk but he limps. He doesn't seem to be in pain but when I touch his leg he screams. For this reason I have not felt the leg to see if it's broken. He also has a small cut on the side of his leg where he trapped it in the door. I was wondering if anyone could tell me if it's broken and tell me what to do other than take him to the vet tomorrow.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21j-os-TFW">
-                                        <rect key="frame" x="223" y="28.5" width="80" height="28"/>
+                                        <rect key="frame" x="213" y="36.5" width="90" height="20"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="Show more...">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="uPb-u1-546"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="...Show more">
                                             <color key="titleColor" name="miipets_green"/>
                                         </state>
                                     </button>
