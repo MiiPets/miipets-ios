@@ -84,6 +84,9 @@
                                         <state key="normal" title="...Show more">
                                             <color key="titleColor" name="miipets_green"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapShowMoreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GPP-8f-Ej1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,6 +118,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="descriptionLabelBottomConstraint" destination="axa-tH-e4s" id="MGO-W9-PV2"/>
                 <outlet property="detailContainerStackView" destination="9yV-pg-Y8d" id="I8O-0F-nMX"/>
                 <outlet property="detailDescriptionContainerView" destination="sEE-9y-g0i" id="Nbl-FO-egP"/>
                 <outlet property="detailDescriptionLabel" destination="r6U-jQ-PWc" id="KHh-Dy-uGu"/>

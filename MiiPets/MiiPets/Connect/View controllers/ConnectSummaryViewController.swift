@@ -1,16 +1,11 @@
 import UIKit
 
 class ConnectSummaryViewController: UITableViewController {
-    
-    // MARK: Constants
-    
-    let kConnectMessageCellIdentifier = "ConnectMessageCellIdentifier"
 
     // MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UINib.init(nibName: "ConnectMessageTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: kConnectMessageCellIdentifier)
     }
 }
 
@@ -27,10 +22,7 @@ extension ConnectSummaryViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let connectMessageCell = tableView.dequeueReusableCell(withIdentifier: kConnectMessageCellIdentifier) as? ConnectMessageTableViewCell else {
-            return UITableViewCell()
-        }
-        
+        let connectMessageCell = ConnectMessageTableViewCell.cell(forIndexPath: indexPath, tableView: tableView, delegate: self)
         return connectMessageCell
     }
 }
@@ -49,5 +41,16 @@ extension ConnectSummaryViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: ConnectMessageDelegate
+
+extension ConnectSummaryViewController: ConnectMessageDelegate {
+    
+    func cellNeedsUpdate(at indexPath: IndexPath) {
+        UIView.performWithoutAnimation {
+            self.tableView.reloadData()
+        }
     }
 }
