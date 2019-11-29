@@ -14,7 +14,7 @@ class ConnectSummaryViewController: UITableViewController {
 extension ConnectSummaryViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
