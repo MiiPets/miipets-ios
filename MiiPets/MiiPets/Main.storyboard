@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="10I-ri-u8t">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="10I-ri-u8t">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="19" y="142"/>
         </scene>
-        <!--Pets View Controller-->
+        <!--Appointments View Controller-->
         <scene sceneID="osX-qu-YnE">
             <objects>
-                <viewController id="tp5-C0-iI9" customClass="PetsViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tp5-C0-iI9" customClass="AppointmentsViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xig-8o-OgV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,11 +178,11 @@
             </objects>
             <point key="canvasLocation" x="-123" y="-1270"/>
         </scene>
-        <!--Pets-->
+        <!--Appointments-->
         <scene sceneID="Jpq-K2-G35">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qf9-uX-de8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pets" image="tabbar_pets" selectedImage="tabbar_pets" id="mgN-vg-CWk">
+                    <tabBarItem key="tabBarItem" title="Appointments" image="tabbar_appointments" selectedImage="tabbar_appointments" id="mgN-vg-CWk">
                         <color key="badgeColor" name="miipets_green"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -223,9 +222,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="tabbar_appointments" width="30" height="30"/>
         <image name="tabbar_home" width="30" height="30"/>
         <image name="tabbar_notifications" width="30" height="30"/>
-        <image name="tabbar_pets" width="30" height="30"/>
         <image name="tabbar_profile" width="30" height="30"/>
         <image name="tabbar_rewards" width="30" height="30"/>
         <namedColor name="miipets_green">

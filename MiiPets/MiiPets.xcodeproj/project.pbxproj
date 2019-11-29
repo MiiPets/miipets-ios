@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,7 +26,7 @@
 		86FA037422E3799E0047905C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037322E3799E0047905C /* HomeViewController.swift */; };
 		86FA037622E379B20047905C /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037522E379B20047905C /* RewardsViewController.swift */; };
 		86FA037822E379D30047905C /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037722E379D30047905C /* ConnectViewController.swift */; };
-		86FA037A22E379E60047905C /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037922E379E60047905C /* PetsViewController.swift */; };
+		86FA037A22E379E60047905C /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037922E379E60047905C /* AppointmentsViewController.swift */; };
 		86FA037C22E379FC0047905C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037B22E379FC0047905C /* ProfileViewController.swift */; };
 		86FA037E22E46BA70047905C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FA037D22E46BA70047905C /* Colors.xcassets */; };
 /* End PBXBuildFile section */
@@ -68,7 +68,7 @@
 		86FA037322E3799E0047905C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		86FA037522E379B20047905C /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		86FA037722E379D30047905C /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
-		86FA037922E379E60047905C /* PetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
+		86FA037922E379E60047905C /* AppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
 		86FA037B22E379FC0047905C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		86FA037D22E46BA70047905C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EB7C28FF195F028282FD725A /* Pods-MiiPetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPetsTests.debug.xcconfig"; path = "Target Support Files/Pods-MiiPetsTests/Pods-MiiPetsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 		86FA036B22E36E310047905C /* Pets */ = {
 			isa = PBXGroup;
 			children = (
-				86FA037922E379E60047905C /* PetsViewController.swift */,
+				86FA037922E379E60047905C /* AppointmentsViewController.swift */,
 			);
 			path = Pets;
 			sourceTree = "<group>";
@@ -423,7 +423,7 @@
 				86CE3AE12332C61900399104 /* LandingTitleHeaderFooterView.swift in Sources */,
 				86FA034922E368AB0047905C /* AppDelegate.swift in Sources */,
 				86FA037C22E379FC0047905C /* ProfileViewController.swift in Sources */,
-				86FA037A22E379E60047905C /* PetsViewController.swift in Sources */,
+				86FA037A22E379E60047905C /* AppointmentsViewController.swift in Sources */,
 				86FA037422E3799E0047905C /* HomeViewController.swift in Sources */,
 				86CE3ADF2332B64E00399104 /* ConnectLandingCotainerTableViewCell.swift in Sources */,
 			);

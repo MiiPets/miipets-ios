@@ -1,6 +1,6 @@
 import UIKit
 
-class PetsViewController: UIViewController {
+class AppointmentsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
