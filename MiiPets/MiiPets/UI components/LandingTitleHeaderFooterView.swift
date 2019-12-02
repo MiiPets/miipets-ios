@@ -1,5 +1,10 @@
 import UIKit
 
+protocol LandingTitleHeaderFooterViewButtonDelegate: AnyObject {
+    
+    func didTap()
+}
+
 class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
     
     // MARK: Constants
@@ -17,9 +22,19 @@ class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
         return label
     }()
     
+    private lazy var actionButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .black
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
     lazy var topConstraint: NSLayoutConstraint = {
         return self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 100.0)
     }()
+    
+    private weak var buttonDelegate: LandingTitleHeaderFooterViewButtonDelegate?
     
     // MARK: Init
     
@@ -27,6 +42,7 @@ class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         
         self.addAndLayoutTitleLabel()
+        self.actionButton.isHidden = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,5 +71,28 @@ class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
             self.setNeedsLayout()
             self.layoutIfNeeded()
         }
+    }
+}
+
+// MARK: Right button configuration
+ 
+extension LandingTitleHeaderFooterView {
+    
+    func configureWithRightButtonImage(_ image: UIImage, delegate: LandingTitleHeaderFooterViewButtonDelegate) {
+        self.buttonDelegate = delegate
+        
+        self.actionButton.isHidden = false
+        self.actionButton.setImage(image, for: .normal)
+        self.actionButton.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
+        
+        self.titleLabel.addSubview(self.actionButton)
+        
+        self.actionButton.trailingAnchor.constraint(equalTo: self.titleLabel.trailingAnchor).isActive = true
+        self.actionButton.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor).isActive = true
+    }
+    
+    @objc private func didTapActionButton() {
+        guard let delegate = self.buttonDelegate else { return }
+        delegate.didTap()
     }
 }

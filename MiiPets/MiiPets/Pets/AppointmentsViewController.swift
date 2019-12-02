@@ -83,6 +83,19 @@ extension AppointmentsViewController {
         header.setTitle("MiiPointments")
         header.updateTopPadding()
         
+        if let image = UIImage(named: "plus_icon") {
+            header.configureWithRightButtonImage(image, delegate: self)
+        }
+        
         return header
+    }
+}
+
+// MARK: LandingTitleHeaderFooterViewButtonDelegate
+
+extension AppointmentsViewController: LandingTitleHeaderFooterViewButtonDelegate {
+    
+    func didTap() {
+        debugPrint("Plus button tapped on Appointments landing")
     }
 }
