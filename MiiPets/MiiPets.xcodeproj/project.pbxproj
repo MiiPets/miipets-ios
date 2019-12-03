@@ -12,6 +12,8 @@
 		8615AFFF2343F03100F7FAB6 /* ConnectSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8615AFFE2343F03100F7FAB6 /* ConnectSummaryViewController.swift */; };
 		869EDA1722E79710007F50BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869EDA1622E79710007F50BC /* Assets.xcassets */; };
 		869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EDA1822E79838007F50BC /* UIColor+Extensions.swift */; };
+		86AF2BAE2397133E00CAD913 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF2BAD2397133E00CAD913 /* UITableView+Extensions.swift */; };
+		86AF2BB22397164B00CAD913 /* AppointmentsCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF2BB12397164B00CAD913 /* AppointmentsCellFactory.swift */; };
 		86BFE467239704C7008CDC08 /* AppointmentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BFE466239704C7008CDC08 /* AppointmentsDataSource.swift */; };
 		86BFE46B23970CE5008CDC08 /* AppointmentDateSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BFE46923970CE5008CDC08 /* AppointmentDateSelectionCell.swift */; };
 		86BFE46C23970CE5008CDC08 /* AppointmentDateSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86BFE46A23970CE5008CDC08 /* AppointmentDateSelectionCell.xib */; };
@@ -53,6 +55,8 @@
 		8615AFFE2343F03100F7FAB6 /* ConnectSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSummaryViewController.swift; sourceTree = "<group>"; };
 		869EDA1622E79710007F50BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		869EDA1822E79838007F50BC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		86AF2BAD2397133E00CAD913 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		86AF2BB12397164B00CAD913 /* AppointmentsCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsCellFactory.swift; sourceTree = "<group>"; };
 		86BFE466239704C7008CDC08 /* AppointmentsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsDataSource.swift; sourceTree = "<group>"; };
 		86BFE46923970CE5008CDC08 /* AppointmentDateSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDateSelectionCell.swift; sourceTree = "<group>"; };
 		86BFE46A23970CE5008CDC08 /* AppointmentDateSelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentDateSelectionCell.xib; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			children = (
 				86EA6D2222E4B18100B2578D /* UIViewController+Extensions.swift */,
 				869EDA1822E79838007F50BC /* UIColor+Extensions.swift */,
+				86AF2BAD2397133E00CAD913 /* UITableView+Extensions.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				86BFE46823970C2D008CDC08 /* Views */,
+				86AF2BB12397164B00CAD913 /* AppointmentsCellFactory.swift */,
 				86BFE466239704C7008CDC08 /* AppointmentsDataSource.swift */,
 				86FA037922E379E60047905C /* AppointmentsViewController.swift */,
 			);
@@ -432,12 +438,14 @@
 			files = (
 				86BFE46B23970CE5008CDC08 /* AppointmentDateSelectionCell.swift in Sources */,
 				8615AFFF2343F03100F7FAB6 /* ConnectSummaryViewController.swift in Sources */,
+				86AF2BB22397164B00CAD913 /* AppointmentsCellFactory.swift in Sources */,
 				86FA037822E379D30047905C /* ConnectViewController.swift in Sources */,
 				869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */,
 				86CE3AD92332ADCE00399104 /* RoundedCardView.swift in Sources */,
 				86FA036F22E374910047905C /* LandingTabBarControllerViewController.swift in Sources */,
 				86BFE467239704C7008CDC08 /* AppointmentsDataSource.swift in Sources */,
 				86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */,
+				86AF2BAE2397133E00CAD913 /* UITableView+Extensions.swift in Sources */,
 				86CACDFF2343D64400445CD7 /* ConnectMessageTableViewCell.swift in Sources */,
 				86FA037622E379B20047905C /* RewardsViewController.swift in Sources */,
 				86CE3AE12332C61900399104 /* LandingTitleHeaderFooterView.swift in Sources */,

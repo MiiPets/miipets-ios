@@ -21,8 +21,6 @@ class AppointmentsViewController: UITableViewController {
         
         self.addTopMiiPetsGreenFadingImage()
         self.registerViewsAndCells()
-        
-        self.dataSource.visibleMonths.forEach({ debugPrint("Month string: \($0)") })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +33,7 @@ class AppointmentsViewController: UITableViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
-    // MARK: UITableView
+    // MARK: View registration
     
     private func registerViewsAndCells() {
         self.tableView.register(LandingTitleHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: kTitleHeaderFooterViewReuseIdentifier)
@@ -55,7 +53,7 @@ extension AppointmentsViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        return tableView.cell(ofType: AppointmentDateSelectionCell.self, indexPath: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
