@@ -6,6 +6,12 @@ class AppointmentsViewController: UITableViewController {
     
     let kTitleHeaderFooterViewReuseIdentifier = "TitleHeaderFooterViewReuseIdentifier"
     
+    // MARK: Properties
+    
+    private lazy var dataSource: AppointmentsDataSource = {
+        return AppointmentsDataSource()
+    }()
+    
     // MARK: View Lifecycle
 
     override func viewDidLoad() {
@@ -15,6 +21,8 @@ class AppointmentsViewController: UITableViewController {
         
         self.addTopMiiPetsGreenFadingImage()
         self.registerViewsAndCells()
+        
+        self.dataSource.visibleMonths.forEach({ debugPrint("Month string: \($0)") })
     }
     
     override func viewWillAppear(_ animated: Bool) {
