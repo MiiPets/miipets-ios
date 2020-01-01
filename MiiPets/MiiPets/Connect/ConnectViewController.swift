@@ -4,8 +4,8 @@ class ConnectViewController: UITableViewController {
     
     // MARK: Constants
     
-    let kContainerCellReuseIdentifier = "ContainerCellReuseIdentifier"
-    let kTitleHeaderFooterViewReuseIdentifier = "TitleHeaderFooterViewReuseIdentifier"
+    private let kContainerCellReuseIdentifier = "ContainerCellReuseIdentifier"
+    private let kTitleHeaderFooterViewReuseIdentifier = "TitleHeaderFooterViewReuseIdentifier"
     
     // MARK: View Lifecycle
 
