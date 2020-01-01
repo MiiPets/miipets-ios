@@ -1,6 +1,6 @@
 import UIKit
 
-class RewardsViewController: UIViewController {
+class SitterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

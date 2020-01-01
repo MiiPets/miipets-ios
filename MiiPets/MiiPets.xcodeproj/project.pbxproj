@@ -29,7 +29,7 @@
 		86FA036F22E374910047905C /* LandingTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */; };
 		86FA037222E3793E0047905C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FA037122E3793E0047905C /* Main.storyboard */; };
 		86FA037422E3799E0047905C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037322E3799E0047905C /* HomeViewController.swift */; };
-		86FA037622E379B20047905C /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037522E379B20047905C /* RewardsViewController.swift */; };
+		86FA037622E379B20047905C /* SitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037522E379B20047905C /* SitterViewController.swift */; };
 		86FA037822E379D30047905C /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037722E379D30047905C /* ConnectViewController.swift */; };
 		86FA037A22E379E60047905C /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037922E379E60047905C /* AppointmentsViewController.swift */; };
 		86FA037C22E379FC0047905C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037B22E379FC0047905C /* ProfileViewController.swift */; };
@@ -76,7 +76,7 @@
 		86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		86FA037122E3793E0047905C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		86FA037322E3799E0047905C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		86FA037522E379B20047905C /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
+		86FA037522E379B20047905C /* SitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterViewController.swift; sourceTree = "<group>"; };
 		86FA037722E379D30047905C /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		86FA037922E379E60047905C /* AppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
 		86FA037B22E379FC0047905C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 				86FA036C22E36E360047905C /* Profile */,
 				86FA036B22E36E310047905C /* Appointments */,
 				86FA036A22E36E220047905C /* Connect */,
-				86FA036922E36DEB0047905C /* Rewards */,
+				86FA036922E36DEB0047905C /* Sitter */,
 				86FA036822E36DE10047905C /* Home */,
 				86EA6D2122E4B15900B2578D /* Categories */,
 				86CE3AD72332AD9700399104 /* UI components */,
@@ -217,12 +217,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		86FA036922E36DEB0047905C /* Rewards */ = {
+		86FA036922E36DEB0047905C /* Sitter */ = {
 			isa = PBXGroup;
 			children = (
-				86FA037522E379B20047905C /* RewardsViewController.swift */,
+				86FA037522E379B20047905C /* SitterViewController.swift */,
 			);
-			path = Rewards;
+			path = Sitter;
 			sourceTree = "<group>";
 		};
 		86FA036A22E36E220047905C /* Connect */ = {
@@ -447,7 +447,7 @@
 				86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */,
 				86AF2BAE2397133E00CAD913 /* UITableView+Extensions.swift in Sources */,
 				86CACDFF2343D64400445CD7 /* ConnectMessageTableViewCell.swift in Sources */,
-				86FA037622E379B20047905C /* RewardsViewController.swift in Sources */,
+				86FA037622E379B20047905C /* SitterViewController.swift in Sources */,
 				86CE3AE12332C61900399104 /* LandingTitleHeaderFooterView.swift in Sources */,
 				86FA034922E368AB0047905C /* AppDelegate.swift in Sources */,
 				86FA037C22E379FC0047905C /* ProfileViewController.swift in Sources */,

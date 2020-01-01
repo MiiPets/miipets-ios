@@ -6,6 +6,7 @@ class ConnectSummaryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Connect"
     }
 }
 
