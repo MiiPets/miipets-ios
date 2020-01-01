@@ -10,6 +10,7 @@ class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
     // MARK: Constants
     
     static let kAdjustedTopPadding: CGFloat = 75.0
+    static let kAdjustedBottomPadding: CGFloat = -23.5
     
     // MARK: Properties
     
@@ -34,6 +35,10 @@ class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
         return self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 100.0)
     }()
     
+    lazy var bottomConstraint: NSLayoutConstraint = {
+        return self.titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10.0)
+    }()
+    
     private weak var buttonDelegate: LandingTitleHeaderFooterViewButtonDelegate?
     
     // MARK: Init
@@ -56,7 +61,7 @@ class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
         
         self.addConstraint(self.topConstraint)
         self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0).isActive = true
-        self.titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10.0).isActive = true
+        self.addConstraint(self.bottomConstraint)
         self.titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15.0).isActive = true
     }
     
@@ -67,6 +72,15 @@ class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
     func updateTopPadding(_ padding: CGFloat = kAdjustedTopPadding) {
         if self.topConstraint.constant != padding {
             self.topConstraint.constant = padding
+
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
+        }
+    }
+    
+    func updateBottomPadding(_ padding: CGFloat = kAdjustedBottomPadding) {
+        if self.bottomConstraint.constant != padding {
+            self.bottomConstraint.constant = padding
 
             self.setNeedsLayout()
             self.layoutIfNeeded()

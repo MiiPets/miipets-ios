@@ -6,6 +6,36 @@ class SitterViewController: UITableViewController {
     
     private let kTitleHeaderFooterViewReuseIdentifier = "TitleHeaderFooterViewReuseIdentifier"
     
+    // MARK: - Properties
+    
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var filteredSitters: [Sitter]?
+    private let allTheSitters: [Sitter]
+    
+    // MARK: - Init
+    
+    override init(style: UITableView.Style) {
+        // TODO: Remove
+        self.allTheSitters = [Sitter(sitterID: "1234", name: "Stefan", surname: "Bouwer", profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Stefan"),
+                              Sitter(sitterID: "1235", name: "Luan", surname: "Stoop", profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Luan"),
+                              Sitter(sitterID: "1236", name: "Ruan", surname: "van der Merwe", profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Ruan"),
+                              Sitter(sitterID: "1237", name: "Ivan", surname: "Stoop", profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Ivan"),
+                              Sitter(sitterID: "1238", name: "Fritz", surname: "Poggenpoel", profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Fritz")]
+        
+        super.init(style: style)
+    }
+    
+    required init?(coder: NSCoder) {
+        // TODO: Remove
+        self.allTheSitters = [Sitter(sitterID: "1234", name: "Stefan", surname: "Bouwer", profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Stefan"),
+                              Sitter(sitterID: "1235", name: "Luan", surname: "Stoop", profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Luan"),
+                              Sitter(sitterID: "1236", name: "Ruan", surname: "van der Merwe", profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Ruan"),
+                              Sitter(sitterID: "1237", name: "Ivan", surname: "Stoop", profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Ivan"),
+                              Sitter(sitterID: "1238", name: "Fritz", surname: "Poggenpoel", profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Fritz")]
+        
+        super.init(coder: coder)
+    }
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -13,6 +43,7 @@ class SitterViewController: UITableViewController {
         
         self.style()
         self.registerTableViews()
+        self.setUpSearchViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,11 +82,15 @@ extension SitterViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.allTheSitters.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.cell(ofType: SitterTableViewCell.self, indexPath: indexPath)
+        
+        cell.update(with: self.sitterFullname(at: indexPath.row), profilePicture: self.sitterProfilePicture(at: indexPath.row))
+        
+        return cell
     }
 }
 
@@ -86,8 +121,48 @@ extension SitterViewController {
         
         header.setTitle("MiiSitter")
         header.updateTopPadding()
+        header.updateBottomPadding()
         
         return header
+    }
+}
+
+// MARK: - Sitter data
+
+extension SitterViewController {
+    
+    private func setUpSearchViewController() {
+        self.searchController.searchResultsUpdater = self
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Search sitters"
+        self.navigationItem.searchController = searchController
+        self.definesPresentationContext = true
+        
+//        self.searchController.searchBar.scopeButtonTitles = Candy.Category.allCases.map { $0.rawValue }
+        self.searchController.searchBar.delegate = self
+    }
+    
+    private func sitterFullname(at index: Int) -> String {
+        return self.allTheSitters[index].fullname()
+    }
+    
+    private func sitterProfilePicture(at index: Int) -> UIImage? {
+        return UIImage(data: Data(base64Encoded: self.allTheSitters[index].profilePicture!)!)!
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension SitterViewController: UISearchBarDelegate {
+    
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension SitterViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }
 

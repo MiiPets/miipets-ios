@@ -220,6 +220,7 @@
         <!--Sitter View Controller-->
         <scene sceneID="dRK-32-gIW">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGT-Bp-kXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="pDe-PK-Q3p" customClass="SitterViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="OOm-Ft-WVO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -242,7 +243,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="7cT-Eu-KRo"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kGT-Bp-kXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="909" y="142"/>
         </scene>

@@ -94,6 +94,7 @@ extension ConnectViewController {
         
         header.setTitle("MiiConnect")
         header.updateTopPadding()
+        header.updateBottomPadding()
         
         return header
     }
