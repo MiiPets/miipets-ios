@@ -1,6 +1,6 @@
 import UIKit
 
-extension UIViewController {
+extension UIViewController {    
     
     private var topAnchorConstant: CGFloat {
         if self is UITableViewController {

@@ -13,6 +13,9 @@
 		869C280A23BD347D0095DF5E /* Sitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C280923BD347D0095DF5E /* Sitter.swift */; };
 		869C288923BD39D40095DF5E /* SitterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C288723BD39D40095DF5E /* SitterTableViewCell.swift */; };
 		869C288A23BD39D40095DF5E /* SitterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869C288823BD39D40095DF5E /* SitterTableViewCell.xib */; };
+		869C288C23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C288B23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift */; };
+		869C288E23BDFE2D0095DF5E /* TitleAndSubviewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869C288D23BDFE2D0095DF5E /* TitleAndSubviewHeaderView.xib */; };
+		869C289023BE1AFB0095DF5E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C288F23BE1AFB0095DF5E /* UIView+Extensions.swift */; };
 		869EDA1722E79710007F50BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869EDA1622E79710007F50BC /* Assets.xcassets */; };
 		869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EDA1822E79838007F50BC /* UIColor+Extensions.swift */; };
 		86AF2BAE2397133E00CAD913 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AF2BAD2397133E00CAD913 /* UITableView+Extensions.swift */; };
@@ -59,6 +62,9 @@
 		869C280923BD347D0095DF5E /* Sitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sitter.swift; sourceTree = "<group>"; };
 		869C288723BD39D40095DF5E /* SitterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterTableViewCell.swift; sourceTree = "<group>"; };
 		869C288823BD39D40095DF5E /* SitterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SitterTableViewCell.xib; sourceTree = "<group>"; };
+		869C288B23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndSubviewHeaderView.swift; sourceTree = "<group>"; };
+		869C288D23BDFE2D0095DF5E /* TitleAndSubviewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleAndSubviewHeaderView.xib; sourceTree = "<group>"; };
+		869C288F23BE1AFB0095DF5E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		869EDA1622E79710007F50BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		869EDA1822E79838007F50BC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		86AF2BAD2397133E00CAD913 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -158,6 +164,8 @@
 			children = (
 				86CE3AD82332ADCE00399104 /* RoundedCardView.swift */,
 				86CE3AE02332C61900399104 /* LandingTitleHeaderFooterView.swift */,
+				869C288B23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift */,
+				869C288D23BDFE2D0095DF5E /* TitleAndSubviewHeaderView.xib */,
 			);
 			path = "UI components";
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 				86EA6D2222E4B18100B2578D /* UIViewController+Extensions.swift */,
 				869EDA1822E79838007F50BC /* UIColor+Extensions.swift */,
 				86AF2BAD2397133E00CAD913 /* UITableView+Extensions.swift */,
+				869C288F23BE1AFB0095DF5E /* UIView+Extensions.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -380,6 +389,7 @@
 				86FA037E22E46BA70047905C /* Colors.xcassets in Resources */,
 				86CACE002343D64400445CD7 /* ConnectMessageTableViewCell.xib in Resources */,
 				869EDA1722E79710007F50BC /* Assets.xcassets in Resources */,
+				869C288E23BDFE2D0095DF5E /* TitleAndSubviewHeaderView.xib in Resources */,
 				86FA037222E3793E0047905C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,9 +477,11 @@
 				86AF2BB22397164B00CAD913 /* AppointmentsCellFactory.swift in Sources */,
 				86FA037822E379D30047905C /* ConnectViewController.swift in Sources */,
 				869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */,
+				869C288C23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift in Sources */,
 				86CE3AD92332ADCE00399104 /* RoundedCardView.swift in Sources */,
 				86FA036F22E374910047905C /* LandingTabBarControllerViewController.swift in Sources */,
 				86BFE467239704C7008CDC08 /* AppointmentsDataSource.swift in Sources */,
+				869C289023BE1AFB0095DF5E /* UIView+Extensions.swift in Sources */,
 				86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */,
 				86AF2BAE2397133E00CAD913 /* UITableView+Extensions.swift in Sources */,
 				86CACDFF2343D64400445CD7 /* ConnectMessageTableViewCell.swift in Sources */,
@@ -647,7 +659,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.miipets.App.MiiPets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -667,7 +679,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.miipets.App.MiiPets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

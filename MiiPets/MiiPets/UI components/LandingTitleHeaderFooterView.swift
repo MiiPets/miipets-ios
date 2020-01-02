@@ -60,9 +60,9 @@ class LandingTitleHeaderFooterView: UITableViewHeaderFooterView {
         self.addSubview(self.titleLabel)
         
         self.addConstraint(self.topConstraint)
-        self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0).isActive = true
+        self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0).isActive = true
         self.addConstraint(self.bottomConstraint)
-        self.titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15.0).isActive = true
+        self.titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0).isActive = true
     }
     
     func setTitle(_ title: String) {
@@ -108,5 +108,29 @@ extension LandingTitleHeaderFooterView {
     @objc private func didTapActionButton() {
         guard let delegate = self.buttonDelegate else { return }
         delegate.didTap()
+    }
+}
+
+// MARK: Search bar configuration
+
+extension LandingTitleHeaderFooterView {
+    
+    func addSearchBarUnderneathHeaderTitle(_ searchBar: UISearchBar) {
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(searchBar)
+        
+        self.removeConstraint(self.bottomConstraint)
+        
+        searchBar.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 5.0).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0.0).isActive = true
+        searchBar.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10.0).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0.0).isActive = true
+        
+        self.setNeedsUpdateConstraints()
+        self.setNeedsLayout()
+
+        self.updateConstraintsIfNeeded()
+        self.layoutIfNeeded()
     }
 }

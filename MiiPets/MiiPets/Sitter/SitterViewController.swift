@@ -1,6 +1,6 @@
 import UIKit
 
-class SitterViewController: UITableViewController {
+class SitterViewController: UIViewController {
     
     // MARK: - Constants
     
@@ -8,13 +8,51 @@ class SitterViewController: UITableViewController {
     
     // MARK: - Properties
     
-    private let searchController = UISearchController(searchResultsController: nil)
     private var filteredSitters: [Sitter]?
     private let allTheSitters: [Sitter]
     
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar(frame: .zero)
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.barStyle = .default
+        searchBar.delegate = self
+        searchBar.placeholder = "Search sitters"
+        searchBar.isTranslucent = true
+        searchBar.showsCancelButton = true
+        searchBar.tintColor = .miipetsGreen
+        searchBar.searchBarStyle = .minimal
+        
+        return searchBar
+    }()
+    
+    private lazy var headerView: TitleAndSubviewHeaderView = {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: "TitleAndSubviewHeaderView", bundle: bundle)
+        let headerView = nib.instantiate(withOwner: self, options: nil).first as! TitleAndSubviewHeaderView
+        
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.titleLabel.text = "MiiSitter"
+        
+        return headerView
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.backgroundColor = .white
+        tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.register(LandingTitleHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: kTitleHeaderFooterViewReuseIdentifier)
+        
+        return tableView
+    }()
+    
     // MARK: - Init
     
-    override init(style: UITableView.Style) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         // TODO: Remove
         self.allTheSitters = [Sitter(sitterID: "1234", name: "Stefan", surname: "Bouwer", profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Stefan"),
                               Sitter(sitterID: "1235", name: "Luan", surname: "Stoop", profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Luan"),
@@ -22,7 +60,7 @@ class SitterViewController: UITableViewController {
                               Sitter(sitterID: "1237", name: "Ivan", surname: "Stoop", profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Ivan"),
                               Sitter(sitterID: "1238", name: "Fritz", surname: "Poggenpoel", profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Fritz")]
         
-        super.init(style: style)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required init?(coder: NSCoder) {
@@ -42,8 +80,8 @@ class SitterViewController: UITableViewController {
         super.viewDidLoad()
         
         self.style()
-        self.registerTableViews()
-        self.setUpSearchViewController()
+        self.configureAndAddSubviews()
+        self.configureAndAddSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,34 +98,48 @@ class SitterViewController: UITableViewController {
     
     private func style() {
         self.view.backgroundColor = UIColor.white
-        self.addTopMiiPetsGreenFadingImage()
+        
+        let headerView = UIView(frame: CGRect(x: 1.0, y: 1.0, width: 1.0, height: 1.0))
+        self.tableView.tableHeaderView = headerView
     }
-}
-
-// MARK: - Tableview
-
-extension SitterViewController {
     
-    private func registerTableViews() {
-        self.tableView.register(LandingTitleHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: kTitleHeaderFooterViewReuseIdentifier)
+    private func configureAndAddSubviews() {
+        self.view.addSubview(self.headerView)
+        self.view.addSubview(self.tableView)
+        
+        self.headerView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0.0).isActive = true
+        self.headerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0.0).isActive = true
+        self.headerView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0.0).isActive = true
+        
+        self.tableView.topAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: 0.0).isActive = true
+        self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0.0).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0.0).isActive = true
+        self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0.0).isActive = true
     }
 }
 
 // MARK: - Table view data source
 
-extension SitterViewController {
+extension SitterViewController: UITableViewDataSource {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.allTheSitters.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.isSearchBarEmpty {
+            return self.allTheSitters.count
+        } else {
+            return self.filteredSitters?.count ?? 0
+        }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(ofType: SitterTableViewCell.self, indexPath: indexPath)
         
+        if indexPath.row > 0 {
+            cell.addSeparator(to: .top, firstInset: 15.0)
+        }
         cell.update(with: self.sitterFullname(at: indexPath.row), profilePicture: self.sitterProfilePicture(at: indexPath.row))
         
         return cell
@@ -96,34 +148,14 @@ extension SitterViewController {
 
 // MARK: - Table view delegate
 
-extension SitterViewController {
+extension SitterViewController: UITableViewDelegate {
     
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40.0
     }
     
-    override func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-        return 100.0
-    }
-    
-    override func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 100.0
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: kTitleHeaderFooterViewReuseIdentifier) as? LandingTitleHeaderFooterView else {
-            return nil
-        }
-        
-        header.setTitle("MiiSitter")
-        header.updateTopPadding()
-        header.updateBottomPadding()
-        
-        return header
     }
 }
 
@@ -131,23 +163,39 @@ extension SitterViewController {
 
 extension SitterViewController {
     
-    private func setUpSearchViewController() {
-        self.searchController.searchResultsUpdater = self
-        self.searchController.obscuresBackgroundDuringPresentation = false
-        self.searchController.searchBar.placeholder = "Search sitters"
-        self.navigationItem.searchController = searchController
-        self.definesPresentationContext = true
-        
-//        self.searchController.searchBar.scopeButtonTitles = Candy.Category.allCases.map { $0.rawValue }
-        self.searchController.searchBar.delegate = self
+    private var isSearchBarEmpty: Bool {
+        return self.searchBar.text?.isEmpty ?? true
+    }
+    
+    private func configureAndAddSearchBar() {
+        self.searchBar.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        self.headerView.containerStackView.addArrangedSubview(self.searchBar)
     }
     
     private func sitterFullname(at index: Int) -> String {
-        return self.allTheSitters[index].fullname()
+        if self.isSearchBarEmpty {
+            return self.allTheSitters[index].fullname()
+        } else {
+            guard let sitters = self.filteredSitters else { return "" }
+            return sitters[index].fullname()
+        }
     }
     
     private func sitterProfilePicture(at index: Int) -> UIImage? {
-        return UIImage(data: Data(base64Encoded: self.allTheSitters[index].profilePicture!)!)!
+        if self.isSearchBarEmpty {
+            return UIImage(data: Data(base64Encoded: self.allTheSitters[index].profilePicture!)!)!
+        } else {
+            guard let sitters = self.filteredSitters else { return nil }
+            return UIImage(data: Data(base64Encoded: sitters[index].profilePicture!)!)!
+        }
+    }
+    
+    private func filterSittersWithSearchText(_ searchText: String) {
+        self.filteredSitters = self.allTheSitters.filter({ (sitter) -> Bool in
+            return sitter.fullname().lowercased().contains(searchText.lowercased())
+        })
+        
+        self.tableView.reloadData()
     }
 }
 
@@ -155,14 +203,13 @@ extension SitterViewController {
 
 extension SitterViewController: UISearchBarDelegate {
     
-}
-
-// MARK: - UISearchResultsUpdating
-
-extension SitterViewController: UISearchResultsUpdating {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filterSittersWithSearchText(searchBar.text!)
+    }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        self.filterSittersWithSearchText(searchBar.text!)
+        searchBar.resignFirstResponder()
     }
 }
-
