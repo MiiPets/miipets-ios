@@ -99,6 +99,7 @@ extension SitterTableViewCell {
         // Update state
         
         self.currentState = .collapsed
+        self.arrowImageView.image = UIImage(named: "downward_arrow")
         
         // Unhide views
         
@@ -144,6 +145,7 @@ extension SitterTableViewCell {
         // Update state
         
         self.currentState = .expanded
+        self.arrowImageView.image = UIImage(named: "upward_arrow")
         
         // Unhide views
         

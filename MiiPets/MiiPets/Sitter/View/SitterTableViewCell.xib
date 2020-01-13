@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaK-jz-HtI" userLabel="sitterDescription">
-                        <rect key="frame" x="15" y="246.5" width="572" height="180"/>
+                        <rect key="frame" x="15" y="246.5" width="572" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                     <constraint firstItem="VaK-jz-HtI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="kEI-Ih-Fgb"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zh9-zp-k1o" secondAttribute="bottom" constant="15" id="pP7-cP-Wjb"/>
                     <constraint firstItem="VaK-jz-HtI" firstAttribute="top" secondItem="QXQ-9K-QMB" secondAttribute="bottom" constant="15" id="sRx-25-5TM"/>
-                    <constraint firstAttribute="bottom" secondItem="VaK-jz-HtI" secondAttribute="bottom" constant="15.5" id="vNy-U7-AvZ"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VaK-jz-HtI" secondAttribute="bottom" constant="20" id="vNy-U7-AvZ"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
