@@ -54,28 +54,28 @@ class SitterViewController: UIViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         // TODO: Remove
-        self.allTheSitters = [Sitter(sitterID: "1234", name: "Stefan", surname: "Bouwer", profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Stefan"),
-                              Sitter(sitterID: "1235", name: "Luan", surname: "Stoop", profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Luan"),
-                              Sitter(sitterID: "1236", name: "Ruan", surname: "van der Merwe", profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Ruan"),
-                              Sitter(sitterID: "1237", name: "Ivan", surname: "Stoop", profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Ivan"),
-                              Sitter(sitterID: "1238", name: "Fritz", surname: "Poggenpoel", profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Fritz")]
+        self.allTheSitters = [Sitter(sitterID: "1234", name: "Stefan", surname: "Bouwer", profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Stefan Bouwer", contactVia: "text message")),
+                              Sitter(sitterID: "1235", name: "Luan", surname: "Stoop", profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Luan Stoop", contactVia: "email")),
+                              Sitter(sitterID: "1236", name: "Ruan", surname: "van der Merwe", profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Ruan van der Merwe", contactVia: "text message")),
+                              Sitter(sitterID: "1237", name: "Ivan", surname: "Stoop", profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Ivan Stoop", contactVia: "email")),
+                              Sitter(sitterID: "1238", name: "Fritz", surname: "Poggenpoel", profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Fritz Poggenpoel", contactVia: "text message"))]
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required init?(coder: NSCoder) {
         // TODO: Remove
-        self.allTheSitters = [Sitter(sitterID: "1234", name: "Stefan", surname: "Bouwer", profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Stefan"),
-                              Sitter(sitterID: "1235", name: "Luan", surname: "Stoop", profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Luan"),
-                              Sitter(sitterID: "1236", name: "Ruan", surname: "van der Merwe", profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Ruan"),
-                              Sitter(sitterID: "1237", name: "Ivan", surname: "Stoop", profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Ivan"),
-                              Sitter(sitterID: "1238", name: "Fritz", surname: "Poggenpoel", profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(), location: nil, bio: "Helli, my name is Fritz")]
+        self.allTheSitters = [Sitter(sitterID: "1234", name: "Stefan", surname: "Bouwer", profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Stefan Bouwer", contactVia: "text message")),
+                              Sitter(sitterID: "1235", name: "Luan", surname: "Stoop", profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Luan Stoop", contactVia: "email")),
+                              Sitter(sitterID: "1236", name: "Ruan", surname: "van der Merwe", profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Ruan van der Merwe", contactVia: "text message")),
+                              Sitter(sitterID: "1237", name: "Ivan", surname: "Stoop", profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Ivan Stoop", contactVia: "email")),
+                              Sitter(sitterID: "1238", name: "Fritz", surname: "Poggenpoel", profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Fritz Poggenpoel", contactVia: "text message"))]
         
         super.init(coder: coder)
     }
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -135,12 +135,18 @@ extension SitterViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.cell(ofType: SitterTableViewCell.self, indexPath: indexPath)
+        let cell = tableView.cell(ofType: SitterTableViewCell.self,
+                                  reuseIdentifier: "SitterTableViewCell:\(indexPath.section)+\(indexPath.row)",
+                                  indexPath: indexPath)
+        
+        cell.delegate = self
         
         if indexPath.row > 0 {
             cell.addSeparator(to: .top, firstInset: 15.0)
         }
-        cell.update(with: self.sitterFullname(at: indexPath.row), profilePicture: self.sitterProfilePicture(at: indexPath.row))
+        cell.update(with: self.sitterFullname(at: indexPath.row),
+                    profilePicture: self.sitterProfilePicture(at: indexPath.row),
+                    bio: self.sitterDescription(at: indexPath.row))
         
         return cell
     }
@@ -156,6 +162,24 @@ extension SitterViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? SitterTableViewCell else { return }
+        
+        cell.collapseOrExpand()
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+}
+
+// MARK: - SitterTableViewCellDelegate
+
+extension SitterViewController: SitterTableViewCellDelegate {
+    
+    var contentWidth: CGFloat {
+        return self.tableView.frame.size.width
     }
 }
 
@@ -197,6 +221,15 @@ extension SitterViewController {
         
         self.tableView.reloadData()
     }
+    
+    private func sitterDescription(at index: Int) -> String? {
+        if self.isSearchBarEmpty {
+            return self.allTheSitters[index].bio
+        } else {
+            guard let sitters = self.filteredSitters else { return "" }
+            return sitters[index].bio
+        }
+    }
 }
 
 // MARK: - UISearchBarDelegate
@@ -211,5 +244,14 @@ extension SitterViewController: UISearchBarDelegate {
         searchBar.text = ""
         self.filterSittersWithSearchText(searchBar.text!)
         searchBar.resignFirstResponder()
+    }
+}
+
+// MARK: - Mock data that we need to delete
+
+extension SitterViewController {
+    
+    private static func newSitterBio(with fullname: String, contactVia: String) -> String {
+        return "Hello, my name is \(fullname) and I love pets and love taking care of them. Please allow me to look after your pet, while you're away. Please contact me via \(contactVia) and I'll get in touch as soon as possible."
     }
 }
