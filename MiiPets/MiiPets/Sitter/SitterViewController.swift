@@ -8,15 +8,16 @@ class SitterViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var filteredSitters: [Sitter]?
-    private let allTheSitters: [Sitter]
+    private lazy var viewModel: SitterViewModel? = {
+        return LandingScreenViewModelResolver.viewmodel(for: .sitter, sitterDelegate: self) as? SitterViewModel
+    }()
     
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.barStyle = .default
         searchBar.delegate = self
-        searchBar.placeholder = "Search sitters"
+        searchBar.placeholder = "Search for a sitter"
         searchBar.isTranslucent = true
         searchBar.showsCancelButton = true
         searchBar.tintColor = .miipetsGreen
@@ -49,30 +50,6 @@ class SitterViewController: UIViewController {
         
         return tableView
     }()
-    
-    // MARK: - Init
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        // TODO: Remove
-        self.allTheSitters = [Sitter(sitterID: "1234", name: "Stefan", surname: "Bouwer", profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Stefan Bouwer", contactVia: "text message")),
-                              Sitter(sitterID: "1235", name: "Luan", surname: "Stoop", profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Luan Stoop", contactVia: "email")),
-                              Sitter(sitterID: "1236", name: "Ruan", surname: "van der Merwe", profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Ruan van der Merwe", contactVia: "text message")),
-                              Sitter(sitterID: "1237", name: "Ivan", surname: "Stoop", profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Ivan Stoop", contactVia: "email")),
-                              Sitter(sitterID: "1238", name: "Fritz", surname: "Poggenpoel", profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Fritz Poggenpoel", contactVia: "text message"))]
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder: NSCoder) {
-        // TODO: Remove
-        self.allTheSitters = [Sitter(sitterID: "1234", name: "Stefan", surname: "Bouwer", profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Stefan Bouwer", contactVia: "text message")),
-                              Sitter(sitterID: "1235", name: "Luan", surname: "Stoop", profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Luan Stoop", contactVia: "email")),
-                              Sitter(sitterID: "1236", name: "Ruan", surname: "van der Merwe", profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Ruan van der Merwe", contactVia: "text message")),
-                              Sitter(sitterID: "1237", name: "Ivan", surname: "Stoop", profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Ivan Stoop", contactVia: "email")),
-                              Sitter(sitterID: "1238", name: "Fritz", surname: "Poggenpoel", profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(), location: nil, bio: SitterViewController.newSitterBio(with: "Fritz Poggenpoel", contactVia: "text message"))]
-        
-        super.init(coder: coder)
-    }
     
     // MARK: - Lifecycle
     
@@ -116,6 +93,11 @@ class SitterViewController: UIViewController {
         self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0.0).isActive = true
         self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0.0).isActive = true
     }
+    
+    private func configureAndAddSearchBar() {
+        self.searchBar.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        self.headerView.containerStackView.addArrangedSubview(self.searchBar)
+    }
 }
 
 // MARK: - Table view data source
@@ -127,11 +109,7 @@ extension SitterViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.isSearchBarEmpty {
-            return self.allTheSitters.count
-        } else {
-            return self.filteredSitters?.count ?? 0
-        }
+        return self.viewModel?.numberOfRows ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -144,9 +122,9 @@ extension SitterViewController: UITableViewDataSource {
         if indexPath.row > 0 {
             cell.addSeparator(to: .top, firstInset: 15.0)
         }
-        cell.update(with: self.sitterFullname(at: indexPath.row),
-                    profilePicture: self.sitterProfilePicture(at: indexPath.row),
-                    bio: self.sitterDescription(at: indexPath.row))
+        cell.update(with: self.viewModel?.sitterFullname(at: indexPath.row) ?? "N/A",
+                    profilePicture: self.viewModel?.sitterProfilePicture(at: indexPath.row),
+                    bio: self.viewModel?.sitterDescription(at: indexPath.row) ?? self.userBioEmptyErrorMessage)
         
         return cell
     }
@@ -183,52 +161,16 @@ extension SitterViewController: SitterTableViewCellDelegate {
     }
 }
 
-// MARK: - Sitter data
+// MARK: - SitterLandingDelegate
 
-extension SitterViewController {
+extension SitterViewController: SitterLandingDelegate {
     
-    private var isSearchBarEmpty: Bool {
+    var isSearchBarEmpty: Bool {
         return self.searchBar.text?.isEmpty ?? true
     }
     
-    private func configureAndAddSearchBar() {
-        self.searchBar.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-        self.headerView.containerStackView.addArrangedSubview(self.searchBar)
-    }
-    
-    private func sitterFullname(at index: Int) -> String {
-        if self.isSearchBarEmpty {
-            return self.allTheSitters[index].fullname()
-        } else {
-            guard let sitters = self.filteredSitters else { return "" }
-            return sitters[index].fullname()
-        }
-    }
-    
-    private func sitterProfilePicture(at index: Int) -> UIImage? {
-        if self.isSearchBarEmpty {
-            return UIImage(data: Data(base64Encoded: self.allTheSitters[index].profilePicture!)!)!
-        } else {
-            guard let sitters = self.filteredSitters else { return nil }
-            return UIImage(data: Data(base64Encoded: sitters[index].profilePicture!)!)!
-        }
-    }
-    
-    private func filterSittersWithSearchText(_ searchText: String) {
-        self.filteredSitters = self.allTheSitters.filter({ (sitter) -> Bool in
-            return sitter.fullname().lowercased().contains(searchText.lowercased())
-        })
-        
+    func reload() {
         self.tableView.reloadData()
-    }
-    
-    private func sitterDescription(at index: Int) -> String? {
-        if self.isSearchBarEmpty {
-            return self.allTheSitters[index].bio
-        } else {
-            guard let sitters = self.filteredSitters else { return "" }
-            return sitters[index].bio
-        }
     }
 }
 
@@ -237,21 +179,25 @@ extension SitterViewController {
 extension SitterViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filterSittersWithSearchText(searchBar.text!)
+        guard let viewModel = self.viewModel else { return }
+        
+        viewModel.filterSittersWithSearchText(searchBar.text!)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        guard let viewModel = self.viewModel else { return }
+        
         searchBar.text = ""
-        self.filterSittersWithSearchText(searchBar.text!)
+        viewModel.filterSittersWithSearchText(searchBar.text!)
         searchBar.resignFirstResponder()
     }
 }
 
-// MARK: - Mock data that we need to delete
+// MARK: Other
 
 extension SitterViewController {
     
-    private static func newSitterBio(with fullname: String, contactVia: String) -> String {
-        return "Hello, my name is \(fullname) and I love pets and love taking care of them. Please allow me to look after your pet, while you're away. Please contact me via \(contactVia) and I'll get in touch as soon as possible."
+    private var userBioEmptyErrorMessage: String {
+        return "No bio specified"
     }
 }

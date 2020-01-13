@@ -40,6 +40,8 @@
 		86FA037A22E379E60047905C /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037922E379E60047905C /* AppointmentsViewController.swift */; };
 		86FA037C22E379FC0047905C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA037B22E379FC0047905C /* ProfileViewController.swift */; };
 		86FA037E22E46BA70047905C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FA037D22E46BA70047905C /* Colors.xcassets */; };
+		86FED42723CD0B4D00059A81 /* SitterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FED42623CD0B4D00059A81 /* SitterViewModel.swift */; };
+		86FED42923CD0BFA00059A81 /* LandingScreensHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FED42823CD0BFA00059A81 /* LandingScreensHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		86FA037922E379E60047905C /* AppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
 		86FA037B22E379FC0047905C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		86FA037D22E46BA70047905C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		86FED42623CD0B4D00059A81 /* SitterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterViewModel.swift; sourceTree = "<group>"; };
+		86FED42823CD0BFA00059A81 /* LandingScreensHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreensHelper.swift; sourceTree = "<group>"; };
 		EB7C28FF195F028282FD725A /* Pods-MiiPetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPetsTests.debug.xcconfig"; path = "Target Support Files/Pods-MiiPetsTests/Pods-MiiPetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				869C280923BD347D0095DF5E /* Sitter.swift */,
+				86FED42623CD0B4D00059A81 /* SitterViewModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				86FA035422E368AC0047905C /* Info.plist */,
 				86FA037122E3793E0047905C /* Main.storyboard */,
 				86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */,
+				86FED42823CD0BFA00059A81 /* LandingScreensHelper.swift */,
 				86FA036C22E36E360047905C /* Profile */,
 				86FA036B22E36E310047905C /* Appointments */,
 				86FA036A22E36E220047905C /* Connect */,
@@ -472,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86FED42723CD0B4D00059A81 /* SitterViewModel.swift in Sources */,
 				86BFE46B23970CE5008CDC08 /* AppointmentDateSelectionCell.swift in Sources */,
 				8615AFFF2343F03100F7FAB6 /* ConnectSummaryViewController.swift in Sources */,
 				86AF2BB22397164B00CAD913 /* AppointmentsCellFactory.swift in Sources */,
@@ -492,6 +499,7 @@
 				869C280A23BD347D0095DF5E /* Sitter.swift in Sources */,
 				86FA037A22E379E60047905C /* AppointmentsViewController.swift in Sources */,
 				86FA037422E3799E0047905C /* HomeViewController.swift in Sources */,
+				86FED42923CD0BFA00059A81 /* LandingScreensHelper.swift in Sources */,
 				869C288923BD39D40095DF5E /* SitterTableViewCell.swift in Sources */,
 				86CE3ADF2332B64E00399104 /* ConnectLandingCotainerTableViewCell.swift in Sources */,
 			);
