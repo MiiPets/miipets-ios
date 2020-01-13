@@ -60,14 +60,21 @@ class SitterTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configure()
+        self.styleProfilePictureImageView()
     }
     
-    // MARK: - Configuration
+    // MARK: - Styling and configuration
     
     private func configure() {
         self.selectionStyle = .none
         self.separatorViewWidthConstraint.constant = 1 / UIScreen.main.scale
         self.collapse()
+    }
+    
+    private func styleProfilePictureImageView() {
+        self.profilePictureImageView.clipsToBounds = true
+        self.profilePictureImageView.layer.masksToBounds = true
+        self.profilePictureImageView.layer.cornerRadius = self.profilePictureImageView.frame.width / 6
     }
 }
 
@@ -99,7 +106,13 @@ extension SitterTableViewCell {
         // Update state
         
         self.currentState = .collapsed
+        
+        // Update image views
+        
         self.arrowImageView.image = UIImage(named: "downward_arrow")
+        
+        self.profilePictureImageView.layer.borderWidth = 0.0
+        self.profilePictureImageView.layer.borderColor = UIColor.clear.cgColor
         
         // Unhide views
         
@@ -145,7 +158,13 @@ extension SitterTableViewCell {
         // Update state
         
         self.currentState = .expanded
+        
+        // Update image views
+        
         self.arrowImageView.image = UIImage(named: "upward_arrow")
+        
+        self.profilePictureImageView.layer.borderWidth = 1 / UIScreen.main.scale
+        self.profilePictureImageView.layer.borderColor = UIColor.lightGray.cgColor
         
         // Unhide views
         
