@@ -15,9 +15,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_fading_view" translatesAutoresizingMaskIntoConstraints="NO" id="iUX-tP-W9z">
-                    <rect key="frame" x="-5" y="-5" width="776" height="190"/>
+                    <rect key="frame" x="-5" y="-5" width="776" height="235"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="190" id="yhI-D4-4js"/>
+                        <constraint firstAttribute="height" constant="235" id="yhI-D4-4js"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EGx-rp-WWt">

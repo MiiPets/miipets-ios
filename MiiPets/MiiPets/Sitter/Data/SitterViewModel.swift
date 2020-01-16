@@ -2,8 +2,6 @@ import UIKit
 
 protocol SitterLandingDelegate: AnyObject {
     
-    var isSearchBarEmpty: Bool { get }
-    
     func reload()
 }
 
@@ -14,7 +12,6 @@ class SitterViewModel: NSObject {
     private weak var delegate: SitterLandingDelegate?
     
     private var sitters: [Sitter] = []
-    private var filteredSitters: [Sitter]?
     
     // MARK: - Init
     
@@ -31,47 +28,19 @@ class SitterViewModel: NSObject {
 extension SitterViewModel {
     
     var numberOfRows: Int {
-        if let delegate = self.delegate, delegate.isSearchBarEmpty {
-            return self.sitters.count
-        } else {
-            return self.filteredSitters?.count ?? 0
-        }
+        return self.sitters.count
     }
     
     func sitterFullname(at index: Int) -> String {
-        if let delegate = self.delegate, delegate.isSearchBarEmpty {
-            return self.sitters[index].fullname()
-        } else {
-            guard let sitters = self.filteredSitters else { return "" }
-            return sitters[index].fullname()
-        }
+        return self.sitters[index].fullname()
     }
     
     func sitterProfilePicture(at index: Int) -> UIImage? {
-        if let delegate = self.delegate, delegate.isSearchBarEmpty {
-            return UIImage(data: Data(base64Encoded: self.sitters[index].profilePicture!)!)!
-        } else {
-            guard let sitters = self.filteredSitters else { return nil }
-            return UIImage(data: Data(base64Encoded: sitters[index].profilePicture!)!)!
-        }
-    }
-    
-    func filterSittersWithSearchText(_ searchText: String) {
-        self.filteredSitters = self.sitters.filter({ (sitter) -> Bool in
-            return sitter.fullname().lowercased().contains(searchText.lowercased())
-        })
-        
-        guard let delegate = self.delegate else { return }
-        delegate.reload()
+        return UIImage(data: Data(base64Encoded: self.sitters[index].profilePicture!)!)!
     }
     
     func sitterDescription(at index: Int) -> String? {
-        if let delegate = self.delegate, delegate.isSearchBarEmpty {
-            return self.sitters[index].bio
-        } else {
-            guard let sitters = self.filteredSitters else { return "" }
-            return sitters[index].bio
-        }
+        return self.sitters[index].bio
     }
 }
 
