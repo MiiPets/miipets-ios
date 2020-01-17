@@ -17,18 +17,29 @@ class SitterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.configure()
         self.style()
+        self.configure()
     }
     
     // MARK: Configuration and styling
     
-    private func configure() {
-        self.title = "MiiSitter"
-    }
-    
     private func style() {
         self.view.backgroundColor = UIColor.white
+    }
+    
+    private func configure() {
+        self.title = "MiiSitter"
+        self.navigationItem.rightBarButtonItems = [self.barbuttonItem(with: UIImage(named: "filter_services_white")!),
+                                                   self.barbuttonItem(with: UIImage(named: "search_services_white")!)]
+    }
+    
+    private func barbuttonItem(with image: UIImage) -> UIBarButtonItem {
+        let button = UIButton(type: .custom)
+        button.setImage(image, for: .normal)
+        button.frame = CGRect(x: 30, y: 30, width: 50, height: 30)
+        
+        let item = UIBarButtonItem(customView: button)
+        return item
     }
 }
 
