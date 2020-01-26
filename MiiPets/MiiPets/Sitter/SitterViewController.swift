@@ -29,14 +29,19 @@ class SitterViewController: UITableViewController {
     
     private func configure() {
         self.title = "MiiSitter"
-        self.navigationItem.rightBarButtonItems = [self.barbuttonItem(with: UIImage(named: "filter_services_white")!),
-                                                   self.barbuttonItem(with: UIImage(named: "search_services_white")!)]
+        self.navigationItem.rightBarButtonItems = [self.barbuttonItem(with: UIImage(named: "filter_services_white")!,
+                                                                      selectedImage: UIImage(named: "filter_services_green")!),
+                                                   self.barbuttonItem(with: UIImage(named: "search_services_white")!,
+                                                                      selectedImage: UIImage(named: "search_services_green")!)]
     }
     
-    private func barbuttonItem(with image: UIImage) -> UIBarButtonItem {
+    private func barbuttonItem(with image: UIImage, selectedImage: UIImage) -> UIBarButtonItem {
         let button = UIButton(type: .custom)
+        
         button.setImage(image, for: .normal)
-        button.frame = CGRect(x: 30, y: 30, width: 50, height: 30)
+        button.setImage(selectedImage, for: .highlighted)
+        
+        button.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         
         let item = UIBarButtonItem(customView: button)
         return item
