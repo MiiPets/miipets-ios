@@ -71,7 +71,10 @@ extension SitterViewController {
         }
         cell.update(with: self.viewModel?.sitterFullname(at: indexPath.row) ?? "N/A",
                     profilePicture: self.viewModel?.sitterProfilePicture(at: indexPath.row),
-                    bio: self.viewModel?.sitterDescription(at: indexPath.row) ?? self.userBioEmptyErrorMessage)
+                    bio: self.viewModel?.sitterDescription(at: indexPath.row) ?? self.userBioEmptyErrorMessage,
+                    distance: self.viewModel?.sitterDistance(at: indexPath.row),
+                    price: self.viewModel?.sitterPrice(at: indexPath.row),
+                    rating: self.viewModel?.sitterRating(at: indexPath.row))
         
         return cell
     }

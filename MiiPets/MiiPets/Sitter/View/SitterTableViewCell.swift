@@ -24,6 +24,12 @@ class SitterTableViewCell: UITableViewCell {
     @IBOutlet private var expandedFullNameLabel: UILabel!
     @IBOutlet private var sitterDescription: UILabel!
     @IBOutlet private var separatorView: UIView!
+    @IBOutlet private weak var collapsedDetailContainerStackView: UIStackView!
+    @IBOutlet private weak var collapsedNameAndLocationStackView: UIStackView!
+    @IBOutlet private weak var collapsedLocationLabel: UILabel!
+    @IBOutlet private weak var collapsedPriceLabel: UILabel!
+    @IBOutlet private weak var collapsedStarImageView: UIImageView!
+    @IBOutlet private weak var collapsedRatingLabel: UILabel!
     
     @IBOutlet private var separatorViewWidthConstraint: NSLayoutConstraint!
     
@@ -82,11 +88,14 @@ class SitterTableViewCell: UITableViewCell {
 
 extension SitterTableViewCell {
     
-    func update(with fullname: String?, profilePicture: UIImage?, bio: String?) {
+    func update(with fullname: String?, profilePicture: UIImage?, bio: String?, distance: String?, price: String?, rating: String?) {
         self.fullnameLabel.text = fullname
         self.profilePictureImageView.image = profilePicture
         self.expandedFullNameLabel.text = fullname
         self.sitterDescription.text = bio
+        self.collapsedLocationLabel.text = distance
+        self.collapsedPriceLabel.text = price
+        self.collapsedRatingLabel.text = rating
     }
 }
 
@@ -116,9 +125,9 @@ extension SitterTableViewCell {
         
         // Unhide views
         
+        self.collapsedDetailContainerStackView.isHidden = false
         self.profilePictureImageView.isHidden = false
         self.arrowImageView.isHidden = false
-        self.fullnameLabel.isHidden = false
         self.separatorView.isHidden = false
         
         // Hide views
@@ -174,8 +183,7 @@ extension SitterTableViewCell {
         self.sitterDescription.isHidden = false
         
         // Hide views
-        
-        self.fullnameLabel.isHidden = true
+        self.collapsedDetailContainerStackView.isHidden = true
         self.separatorView.isHidden = true
         
         // Disable constraints

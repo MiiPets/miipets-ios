@@ -42,6 +42,18 @@ extension SitterViewModel {
     func sitterDescription(at index: Int) -> String? {
         return self.sitters[index].bio
     }
+    
+    func sitterDistance(at index: Int) -> String? {
+        return self.sitters[index].location
+    }
+    
+    func sitterPrice(at index: Int) -> String? {
+        return String(format:"R%.0f", self.sitters[index].price)
+    }
+    
+    func sitterRating(at index: Int) -> String? {
+        return String(format:"%.2f", self.sitters[index].rating)
+    }
 }
 
 // MARK: - Populate sitters
@@ -53,32 +65,47 @@ extension SitterViewModel {
                                    name: "Stefan",
                                    surname: "Bouwer",
                                    profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(),
-                                   location: nil,
-                                   bio: self.newSitterBio(with: "Stefan Bouwer", contactVia: "text message")))
+                                   location: "8.8 km",
+                                   bio: self.newSitterBio(with: "Stefan Bouwer", contactVia: "text message"),
+                                   rating: 4.89,
+                                   price: 260.0,
+                                   services: ["Walk", "Feed"]))
         self.sitters.append(Sitter(sitterID: "1235",
                                    name: "Luan",
                                    surname: "Stoop",
                                    profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(),
-                                   location: nil,
-                                   bio: self.newSitterBio(with: "Luan Stoop", contactVia: "email")))
+                                   location: "1.2 km",
+                                   bio: self.newSitterBio(with: "Luan Stoop", contactVia: "email"),
+                                   rating: 3.50,
+                                   price: 120.0,
+                                   services: ["Walk"]))
         self.sitters.append(Sitter(sitterID: "1236",
                                    name: "Ruan",
                                    surname: "van der Merwe",
                                    profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(),
-                                   location: nil,
-                                   bio: self.newSitterBio(with: "Ruan van der Merwe", contactVia: "text message")))
+                                   location: "23.8 km",
+                                   bio: self.newSitterBio(with: "Ruan van der Merwe", contactVia: "text message"),
+                                   rating: 4.34,
+                                   price: 225.0,
+                                   services: ["Walk", "Feed", "Board", "Sit", "Daycare"]))
         self.sitters.append(Sitter(sitterID: "1237",
                                    name: "Ivan",
                                    surname: "Stoop",
                                    profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(),
-                                   location: nil,
-                                   bio: self.newSitterBio(with: "Ivan Stoop", contactVia: "email")))
+                                   location: "79.8 km",
+                                   bio: self.newSitterBio(with: "Ivan Stoop", contactVia: "email"),
+                                   rating: 4.99,
+                                   price: 489.0,
+                                   services: ["Walk", "Feed", "Sit"]))
         self.sitters.append(Sitter(sitterID: "1238",
                                    name: "Fritz",
                                    surname: "Poggenpoel",
                                    profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(),
-                                   location: nil,
-                                   bio: self.newSitterBio(with: "Fritz Poggenpoel", contactVia: "text message")))
+                                   location: "4.3 km",
+                                   bio: self.newSitterBio(with: "Fritz Poggenpoel", contactVia: "text message"),
+                                   rating: 4.10,
+                                   price: 263.59,
+                                   services: ["Walk", "Feed", "Board", "Sit"]))
     }
     
     private func newSitterBio(with fullname: String, contactVia: String) -> String {
