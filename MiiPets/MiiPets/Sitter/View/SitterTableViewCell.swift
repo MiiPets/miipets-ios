@@ -30,7 +30,13 @@ class SitterTableViewCell: UITableViewCell {
     @IBOutlet private weak var collapsedPriceLabel: UILabel!
     @IBOutlet private weak var collapsedStarImageView: UIImageView!
     @IBOutlet private weak var collapsedRatingLabel: UILabel!
-    
+    @IBOutlet private weak var expandedNameContainerStackView: UIStackView!
+    @IBOutlet private weak var expandedDescriptionContainerStackView: UIStackView!
+    @IBOutlet private weak var expandedLocationLabel: UILabel!
+    @IBOutlet private weak var servicesLabel: UILabel!
+    @IBOutlet private weak var expandedPriceLabel: UILabel!
+    @IBOutlet private weak var expandedRatingLabel: UILabel!
+        
     @IBOutlet private var separatorViewWidthConstraint: NSLayoutConstraint!
     
     // MARK: - General profile picture constraints
@@ -88,14 +94,18 @@ class SitterTableViewCell: UITableViewCell {
 
 extension SitterTableViewCell {
     
-    func update(with fullname: String?, profilePicture: UIImage?, bio: String?, distance: String?, price: String?, rating: String?) {
+    func update(with fullname: String?, profilePicture: UIImage?, bio: String?, distance: String?, price: String?, rating: String?, services: String?) {
         self.fullnameLabel.text = fullname
         self.profilePictureImageView.image = profilePicture
         self.expandedFullNameLabel.text = fullname
         self.sitterDescription.text = bio
         self.collapsedLocationLabel.text = distance
+        self.expandedLocationLabel.text = distance
         self.collapsedPriceLabel.text = price
+        self.expandedPriceLabel.text = price
         self.collapsedRatingLabel.text = rating
+        self.expandedRatingLabel.text = rating
+        self.servicesLabel.text = services
     }
 }
 
@@ -132,8 +142,8 @@ extension SitterTableViewCell {
         
         // Hide views
         
-        self.expandedFullNameLabel.isHidden = true
-        self.sitterDescription.isHidden = true
+        self.expandedNameContainerStackView.isHidden = true
+        self.expandedDescriptionContainerStackView.isHidden = true
         
         // Disable constraints
         
@@ -179,10 +189,11 @@ extension SitterTableViewCell {
         
         self.profilePictureImageView.isHidden = false
         self.arrowImageView.isHidden = false
-        self.expandedFullNameLabel.isHidden = false
-        self.sitterDescription.isHidden = false
+        self.expandedNameContainerStackView.isHidden = false
+        self.expandedDescriptionContainerStackView.isHidden = false
         
         // Hide views
+        
         self.collapsedDetailContainerStackView.isHidden = true
         self.separatorView.isHidden = true
         

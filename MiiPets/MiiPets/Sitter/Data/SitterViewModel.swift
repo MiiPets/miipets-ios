@@ -54,6 +54,21 @@ extension SitterViewModel {
     func sitterRating(at index: Int) -> String? {
         return String(format:"%.2f", self.sitters[index].rating)
     }
+    
+    func sitterServices(at index: Int) -> String {
+        let services = self.sitters[index].services
+        
+        var servicesString: String = ""
+        for i in 0...(services.count - 1) {
+            if i == 0 {
+                servicesString += services[i]
+            } else if i > 0 {
+                servicesString += " | \(services[i])"
+            }
+        }
+        
+        return servicesString
+    }
 }
 
 // MARK: - Populate sitters

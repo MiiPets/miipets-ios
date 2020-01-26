@@ -74,7 +74,8 @@ extension SitterViewController {
                     bio: self.viewModel?.sitterDescription(at: indexPath.row) ?? self.userBioEmptyErrorMessage,
                     distance: self.viewModel?.sitterDistance(at: indexPath.row),
                     price: self.viewModel?.sitterPrice(at: indexPath.row),
-                    rating: self.viewModel?.sitterRating(at: indexPath.row))
+                    rating: self.viewModel?.sitterRating(at: indexPath.row),
+                    services: self.viewModel?.sitterServices(at: indexPath.row))
         
         return cell
     }
