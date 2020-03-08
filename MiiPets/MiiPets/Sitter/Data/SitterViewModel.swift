@@ -11,14 +11,14 @@ class SitterViewModel: NSObject {
     
     private weak var delegate: SitterLandingDelegate?
     
-    private var sitters: [Sitter] = []
+    private var services: [Service] = []
     
     // MARK: - Init
     
     init(delegate: SitterLandingDelegate) {
         self.delegate = delegate
         super.init()
-        self.populateSitters()
+        self.populateServices()
         
     }
 }
@@ -28,103 +28,171 @@ class SitterViewModel: NSObject {
 extension SitterViewModel {
     
     var numberOfRows: Int {
-        return self.sitters.count
+        return self.services.count
     }
-    
-    func sitterFullname(at index: Int) -> String {
-        return self.sitters[index].fullname()
+
+    func serviceProfilePicture(at index: Int) -> UIImage? {
+        return UIImage(data: Data(base64Encoded: self.services[index].gallery!.first!)!)!
     }
-    
-    func sitterProfilePicture(at index: Int) -> UIImage? {
-        return UIImage(data: Data(base64Encoded: self.sitters[index].profilePicture!)!)!
+
+    func serviceTitle(at index: Int) -> String {
+        return self.services[index].title
     }
-    
-    func sitterDescription(at index: Int) -> String? {
-        return self.sitters[index].bio
+
+    func servicePetsAllowed(at index: Int) -> [PetType]? {
+        return self.services[index].allowedPets
     }
-    
-    func sitterDistance(at index: Int) -> String? {
-        return self.sitters[index].location
+
+    func serviceOverview(at index: Int) -> String? {
+        return self.services[index].overview
     }
-    
-    func sitterPrice(at index: Int) -> String? {
-        return String(format:"R%.0f", self.sitters[index].price)
+
+    func serviceLocation(at index: Int) -> String? {
+        return self.services[index].location
     }
-    
-    func sitterRating(at index: Int) -> String? {
-        return String(format:"%.2f", self.sitters[index].rating)
+
+    func servicePricing(at index: Int) -> NSAttributedString? {
+        let priceMutableAttributedString = NSMutableAttributedString(string: self.services[index].price,
+                                                       attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 19.0),
+                                                                    NSAttributedString.Key.foregroundColor: UIColor.black])
+        let extraSpaceAttributedString = NSAttributedString(string: " ")
+        let priceRateAttributedString = NSAttributedString(string: self.services[index].priceRate,
+                                                           attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0),
+                                                           NSAttributedString.Key.foregroundColor: UIColor.black])
+
+        priceMutableAttributedString.append(extraSpaceAttributedString)
+        priceMutableAttributedString.append(priceRateAttributedString)
+
+        return priceMutableAttributedString
     }
-    
-    func sitterServices(at index: Int) -> String {
-        let services = self.sitters[index].services
-        
-        var servicesString: String = ""
-        for i in 0...(services.count - 1) {
-            if i == 0 {
-                servicesString += services[i]
-            } else if i > 0 {
-                servicesString += " | \(services[i])"
-            }
-        }
-        
-        return servicesString
+
+    func serviceRating(at index: Int) -> String? {
+        guard let rating = self.services[index].overallRating else { return nil }
+        return String(format:"%.2f", rating)
     }
 }
 
+//
+// TODO: Remove mock data 👇
+//
 // MARK: - Populate sitters
 
 extension SitterViewModel {
     
-    private func populateSitters() {
-        self.sitters.append(Sitter(sitterID: "1234",
-                                   name: "Stefan",
-                                   surname: "Bouwer",
-                                   profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(),
-                                   location: "8.8 km",
-                                   bio: self.newSitterBio(with: "Stefan Bouwer", contactVia: "text message"),
-                                   rating: 4.89,
-                                   price: 260.0,
-                                   services: ["Walk", "Feed"]))
-        self.sitters.append(Sitter(sitterID: "1235",
-                                   name: "Luan",
-                                   surname: "Stoop",
-                                   profilePicture: UIImage(named:"test-luan-profile")!.pngData()!.base64EncodedString(),
-                                   location: "1.2 km",
-                                   bio: self.newSitterBio(with: "Luan Stoop", contactVia: "email"),
-                                   rating: 3.50,
-                                   price: 120.0,
-                                   services: ["Walk"]))
-        self.sitters.append(Sitter(sitterID: "1236",
-                                   name: "Ruan",
-                                   surname: "van der Merwe",
-                                   profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(),
-                                   location: "23.8 km",
-                                   bio: self.newSitterBio(with: "Ruan van der Merwe", contactVia: "text message"),
-                                   rating: 4.34,
-                                   price: 225.0,
-                                   services: ["Walk", "Feed", "Board", "Sit", "Daycare"]))
-        self.sitters.append(Sitter(sitterID: "1237",
-                                   name: "Ivan",
-                                   surname: "Stoop",
-                                   profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(),
-                                   location: "79.8 km",
-                                   bio: self.newSitterBio(with: "Ivan Stoop", contactVia: "email"),
-                                   rating: 4.99,
-                                   price: 489.0,
-                                   services: ["Walk", "Feed", "Sit"]))
-        self.sitters.append(Sitter(sitterID: "1238",
-                                   name: "Fritz",
-                                   surname: "Poggenpoel",
-                                   profilePicture: UIImage(named:"test-fritz-profile")!.pngData()!.base64EncodedString(),
-                                   location: "4.3 km",
-                                   bio: self.newSitterBio(with: "Fritz Poggenpoel", contactVia: "text message"),
-                                   rating: 4.10,
-                                   price: 263.59,
-                                   services: ["Walk", "Feed", "Board", "Sit"]))
+    private func populateServices() {
+        let userRuan = User(userID: "1234567890",
+                            name: "Ruan",
+                            surname: "van der Merwe",
+                            email: "ruan@gmail.com",
+                            relationships: [.owner, .sitter],
+                            acceptedTCS: true,
+                            acceptedPrivacy: true,
+                            profilePicture: UIImage(named:"test-ruan-profile")!.pngData()!.base64EncodedString(),
+                            bio: newSitterBio(with: "Ruan van der Merwe", contactVia: "text message"),
+                            services: nil)
+        let userIvan = User(userID: "0987654321",
+                            name: "Ivan",
+                            surname: "Stoop",
+                            email: "ivan@gmail.com",
+                            relationships: [.owner, .sitter],
+                            acceptedTCS: true,
+                            acceptedPrivacy: true,
+                            profilePicture: UIImage(named:"test-ivan-profile")!.pngData()!.base64EncodedString(),
+                            bio: newSitterBio(with: "Ivan Stoop", contactVia: "email"),
+                            services: nil)
+        let userStefan = User(userID: "6789012345",
+                              name: "Stefan",
+                              surname: "Bouwer",
+                              email: "stefan@gmail.com",
+                              relationships: [.owner, .sitter],
+                              acceptedTCS: true,
+                              acceptedPrivacy: true,
+                              profilePicture: UIImage(named:"test-profile-picture")!.pngData()!.base64EncodedString(),
+                              bio: newSitterBio(with: "Stefan Bouwer", contactVia: "text message"),
+                              services: nil)
+
+        self.services.append(Service(serviceID: "1234",
+                                    type: .walker,
+                                    title: "Lovely walk on Sea point promanade",
+                                    price: "R200",
+                                    priceRate: "per day",
+                                    user: userRuan,
+                                    overview: newOverview(),
+                                    location: "Cape Town, Western Cape",
+                                    gallery: [UIImage(named:"test-1")!.pngData()!.base64EncodedString()],
+                                    allowedPets: [.dogs],
+                                    numberOfReviews: 2,
+                                    overallRating: 4.3,
+                                    businesHours: ["08:00":"12:00"],
+                                    reviews: nil))
+
+        self.services.append(Service(serviceID: "5678",
+                                    type: .houseSitting,
+                                    title: "Reliable day sitter",
+                                    price: "R80",
+                                    priceRate: "per hour",
+                                    user: userRuan,
+                                    overview: newOverview(),
+                                    location: "Secunda, Mpumulanga",
+                                    gallery: [UIImage(named:"test-2")!.pngData()!.base64EncodedString()],
+                                    allowedPets: [.dogs, .cats, .birds, .reptiles, .other],
+                                    numberOfReviews: 9,
+                                    overallRating: 4.9,
+                                    businesHours: ["08:00":"17:00"],
+                                    reviews: nil))
+
+        self.services.append(Service(serviceID: "9012",
+                                    type: .boarding,
+                                    title: "Best boarding in the whole of the Western Cape",
+                                    price: "R320",
+                                    priceRate: "per day",
+                                    user: userIvan,
+                                    overview: newOverview(),
+                                    location: "Burgundy Estate, Western Cape",
+                                    gallery: [UIImage(named:"test-3")!.pngData()!.base64EncodedString()],
+                                    allowedPets: [.cats],
+                                    numberOfReviews: 0,
+                                    overallRating: 3.2,
+                                    businesHours: ["08:00":"9:00"],
+                                    reviews: nil))
+
+        self.services.append(Service(serviceID: "0987",
+                                    type: .daycare,
+                                    title: "Accrediated daycare specialist",
+                                    price: "R20",
+                                    priceRate: "per hour",
+                                    user: userIvan,
+                                    overview: newOverview(),
+                                    location: "Sea point, Western Cape",
+                                    gallery: [UIImage(named:"test-4")!.pngData()!.base64EncodedString()],
+                                    allowedPets: [.dogs, .cats],
+                                    numberOfReviews: 223,
+                                    overallRating: 4.9,
+                                    businesHours: ["08:00":"20:00"],
+                                    reviews: nil))
+
+        self.services.append(Service(serviceID: "4321",
+                                    type: .houseSitting,
+                                    title: "House sitter in the Burgundy Estate area",
+                                    price: "R500",
+                                    priceRate: "per day",
+                                    user: userStefan,
+                                    overview: newOverview(),
+                                    location: "Cape Town, Western Cape",
+                                    gallery: [UIImage(named:"test-5")!.pngData()!.base64EncodedString()],
+                                    allowedPets: [.dogs, .cats, .birds],
+                                    numberOfReviews: 1,
+                                    overallRating: 4.1,
+                                    businesHours: ["08:00":"20:00"],
+                                    reviews: nil))
     }
     
     private func newSitterBio(with fullname: String, contactVia: String) -> String {
         return "Hello, my name is \(fullname) and I love pets and love taking care of them. Please allow me to look after your pet, while you're away. Please contact me via \(contactVia) and I'll get in touch as soon as possible."
+    }
+
+    private func newOverview() -> String {
+        return "Does your dog love walks on the beach? Then she/he will love this service! I will take your lovely dog on a walk around the Seapoint promenade (about 2 km). I will adapt to the peace of your dog and return when I see they get too tired. The total time this should take is about 1 hour and I will only charge you for only 1 hour even if it does take a little longer. I will also constantly send updates annd pictures :)."
     }
 }
 
