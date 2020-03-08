@@ -69,13 +69,8 @@ extension SitterViewController {
         if indexPath.row > 0 {
             cell.addSeparator(to: .top, firstInset: 15.0)
         }
-        cell.update(with: self.viewModel?.sitterFullname(at: indexPath.row) ?? "N/A",
-                    profilePicture: self.viewModel?.sitterProfilePicture(at: indexPath.row),
-                    bio: self.viewModel?.sitterDescription(at: indexPath.row) ?? self.userBioEmptyErrorMessage,
-                    distance: self.viewModel?.sitterDistance(at: indexPath.row),
-                    price: self.viewModel?.sitterPrice(at: indexPath.row),
-                    rating: self.viewModel?.sitterRating(at: indexPath.row),
-                    services: self.viewModel?.sitterServices(at: indexPath.row))
+
+        cell.update(with: self.sitterDetail(at: indexPath.row))
         
         return cell
     }
@@ -124,6 +119,16 @@ extension SitterViewController: SitterLandingDelegate {
 // MARK: Other
 
 extension SitterViewController {
+
+    private func sitterDetail(at index: Int) -> ServiceDetail {
+        return ServiceDetail(title: self.viewModel?.serviceTitle(at: index),
+                             profilePicture: self.viewModel?.serviceProfilePicture(at: index),
+                             overview: self.viewModel?.serviceOverview(at: index),
+                             location: self.viewModel?.serviceLocation(at: index),
+                             price: self.viewModel?.servicePricing(at: index),
+                             rating: self.viewModel?.serviceRating(at: index),
+                             allowedPets: self.viewModel?.servicePetsAllowed(at: index))
+    }
     
     private var userBioEmptyErrorMessage: String {
         return "No bio specified"

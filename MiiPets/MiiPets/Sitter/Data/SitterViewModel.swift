@@ -30,29 +30,45 @@ extension SitterViewModel {
     var numberOfRows: Int {
         return self.services.count
     }
-    
-    func sitterTitle(at index: Int) -> String {
-        return self.services[index].title
-    }
-    
+
     func serviceProfilePicture(at index: Int) -> UIImage? {
         return UIImage(data: Data(base64Encoded: self.services[index].gallery!.first!)!)!
     }
-    
+
+    func serviceTitle(at index: Int) -> String {
+        return self.services[index].title
+    }
+
+    func servicePetsAllowed(at index: Int) -> [PetType]? {
+        return self.services[index].allowedPets
+    }
+
     func serviceOverview(at index: Int) -> String? {
         return self.services[index].overview
     }
-    
-    func serviceDestination(at index: Int) -> String? {
+
+    func serviceLocation(at index: Int) -> String? {
         return self.services[index].location
     }
-    
-    func sitterPrice(at index: Int) -> String? {
-        return String(format:"R%.0f", self.services[index].pricePerHour)
+
+    func servicePricing(at index: Int) -> NSAttributedString? {
+        let priceMutableAttributedString = NSMutableAttributedString(string: self.services[index].price,
+                                                       attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 19.0),
+                                                                    NSAttributedString.Key.foregroundColor: UIColor.black])
+        let extraSpaceAttributedString = NSAttributedString(string: " ")
+        let priceRateAttributedString = NSAttributedString(string: self.services[index].priceRate,
+                                                           attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0),
+                                                           NSAttributedString.Key.foregroundColor: UIColor.black])
+
+        priceMutableAttributedString.append(extraSpaceAttributedString)
+        priceMutableAttributedString.append(priceRateAttributedString)
+
+        return priceMutableAttributedString
     }
-    
-    func sitterRating(at index: Int) -> String? {
-        return String(format:"%.2f", self.services[index].overallRating!)
+
+    func serviceRating(at index: Int) -> String? {
+        guard let rating = self.services[index].overallRating else { return nil }
+        return String(format:"%.2f", rating)
     }
 }
 
@@ -98,11 +114,12 @@ extension SitterViewModel {
         self.services.append(Service(serviceID: "1234",
                                     type: .walker,
                                     title: "Lovely walk on Sea point promanade",
-                                    pricePerHour: 120,
+                                    price: "R200",
+                                    priceRate: "per day",
                                     user: userRuan,
                                     overview: newOverview(),
-                                    location: nil,
-                                    gallery: nil,
+                                    location: "Cape Town, Western Cape",
+                                    gallery: [UIImage(named:"test-1")!.pngData()!.base64EncodedString()],
                                     allowedPets: [.dogs],
                                     numberOfReviews: 2,
                                     overallRating: 4.3,
@@ -112,12 +129,13 @@ extension SitterViewModel {
         self.services.append(Service(serviceID: "5678",
                                     type: .houseSitting,
                                     title: "Reliable day sitter",
-                                    pricePerHour: 80,
+                                    price: "R80",
+                                    priceRate: "per hour",
                                     user: userRuan,
                                     overview: newOverview(),
-                                    location: nil,
-                                    gallery: nil,
-                                    allowedPets: [.dogs, .cats, .birds],
+                                    location: "Secunda, Mpumulanga",
+                                    gallery: [UIImage(named:"test-2")!.pngData()!.base64EncodedString()],
+                                    allowedPets: [.dogs, .cats, .birds, .reptiles, .other],
                                     numberOfReviews: 9,
                                     overallRating: 4.9,
                                     businesHours: ["08:00":"17:00"],
@@ -126,11 +144,12 @@ extension SitterViewModel {
         self.services.append(Service(serviceID: "9012",
                                     type: .boarding,
                                     title: "Best boarding in the whole of the Western Cape",
-                                    pricePerHour: 280,
+                                    price: "R320",
+                                    priceRate: "per day",
                                     user: userIvan,
                                     overview: newOverview(),
-                                    location: nil,
-                                    gallery: nil,
+                                    location: "Burgundy Estate, Western Cape",
+                                    gallery: [UIImage(named:"test-3")!.pngData()!.base64EncodedString()],
                                     allowedPets: [.cats],
                                     numberOfReviews: 0,
                                     overallRating: 3.2,
@@ -140,11 +159,12 @@ extension SitterViewModel {
         self.services.append(Service(serviceID: "0987",
                                     type: .daycare,
                                     title: "Accrediated daycare specialist",
-                                    pricePerHour: 350,
+                                    price: "R20",
+                                    priceRate: "per hour",
                                     user: userIvan,
                                     overview: newOverview(),
-                                    location: nil,
-                                    gallery: nil,
+                                    location: "Sea point, Western Cape",
+                                    gallery: [UIImage(named:"test-4")!.pngData()!.base64EncodedString()],
                                     allowedPets: [.dogs, .cats],
                                     numberOfReviews: 223,
                                     overallRating: 4.9,
@@ -154,11 +174,12 @@ extension SitterViewModel {
         self.services.append(Service(serviceID: "4321",
                                     type: .houseSitting,
                                     title: "House sitter in the Burgundy Estate area",
-                                    pricePerHour: 70,
+                                    price: "R500",
+                                    priceRate: "per day",
                                     user: userStefan,
                                     overview: newOverview(),
-                                    location: nil,
-                                    gallery: nil,
+                                    location: "Cape Town, Western Cape",
+                                    gallery: [UIImage(named:"test-5")!.pngData()!.base64EncodedString()],
                                     allowedPets: [.dogs, .cats, .birds],
                                     numberOfReviews: 1,
                                     overallRating: 4.1,

@@ -27,7 +27,8 @@ struct User {
         var serviceID: String
         var type: ServiceType
         var title: String
-        var pricePerHour: Double
+        var price: String
+        var priceRate: String
         var user: User
         var overview: String?
         //
@@ -38,7 +39,7 @@ struct User {
         // TODO: This is not going to be stored. Only kept while allocated 👇
         //
         var gallery: [String]?
-        var allowedPets: [PetTypes]?
+        var allowedPets: [PetType]?
         var numberOfReviews: Int?
         var overallRating: Double?
         var businesHours: [String:String]?
@@ -65,8 +66,10 @@ enum ServiceType: String {
     case daycare = "Daycare"
 }
 
-enum PetTypes: String {
+enum PetType: String {
     case dogs = "Dogs"
     case cats = "Cats"
     case birds = "Birds"
+    case reptiles = "Reptiles"
+    case other = "Other"
 }

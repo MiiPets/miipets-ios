@@ -10,6 +10,16 @@ protocol SitterTableViewCellDelegate: AnyObject {
     var contentWidth: CGFloat { get }
 }
 
+struct ServiceDetail {
+    var title: String?
+    var profilePicture: UIImage?
+    var overview: String?
+    var location: String?
+    var price: NSAttributedString?
+    var rating: String?
+    var allowedPets: [PetType]?
+}
+
 class SitterTableViewCell: UITableViewCell {
     
     // MARK: - Constants
@@ -19,23 +29,26 @@ class SitterTableViewCell: UITableViewCell {
     // MARK: - Nib outlets
     
     @IBOutlet private var profilePictureImageView: UIImageView!
-    @IBOutlet private var fullnameLabel: UILabel!
+    @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var arrowImageView: UIImageView!
-    @IBOutlet private var expandedFullNameLabel: UILabel!
-    @IBOutlet private var sitterDescription: UILabel!
+    @IBOutlet private var expandedTitleLabel: UILabel!
+    @IBOutlet private var serviceOverview: UILabel!
     @IBOutlet private var separatorView: UIView!
     @IBOutlet private weak var collapsedDetailContainerStackView: UIStackView!
-    @IBOutlet private weak var collapsedNameAndLocationStackView: UIStackView!
     @IBOutlet private weak var collapsedLocationLabel: UILabel!
     @IBOutlet private weak var collapsedPriceLabel: UILabel!
     @IBOutlet private weak var collapsedStarImageView: UIImageView!
     @IBOutlet private weak var collapsedRatingLabel: UILabel!
-    @IBOutlet private weak var expandedNameContainerStackView: UIStackView!
     @IBOutlet private weak var expandedDescriptionContainerStackView: UIStackView!
+    @IBOutlet private weak var expandedNameContainerStackView: UIStackView!
     @IBOutlet private weak var expandedLocationLabel: UILabel!
-    @IBOutlet private weak var servicesLabel: UILabel!
     @IBOutlet private weak var expandedPriceLabel: UILabel!
     @IBOutlet private weak var expandedRatingLabel: UILabel!
+    @IBOutlet private weak var petDogImageView: UIImageView!
+    @IBOutlet private weak var petCatImageView: UIImageView!
+    @IBOutlet private weak var petBirdImageView: UIImageView!
+    @IBOutlet private weak var petReptileImageView: UIImageView!
+    @IBOutlet private weak var petOtherImageView: UIImageView!
         
     @IBOutlet private var separatorViewWidthConstraint: NSLayoutConstraint!
     
@@ -61,7 +74,8 @@ class SitterTableViewCell: UITableViewCell {
     @IBOutlet private var profilePictureExpandedBottomConstraint: NSLayoutConstraint!
     @IBOutlet private var arrowExpandedLeadingConstraint: NSLayoutConstraint!
     @IBOutlet private var arrowExpandedYConstraint: NSLayoutConstraint!
-    
+    @IBOutlet private var titleAndPetsExpandedTopConstraint: NSLayoutConstraint!
+
     // MARK: - Properties
     
     weak var delegate: SitterTableViewCellDelegate?
@@ -94,18 +108,43 @@ class SitterTableViewCell: UITableViewCell {
 
 extension SitterTableViewCell {
     
-    func update(with fullname: String?, profilePicture: UIImage?, bio: String?, distance: String?, price: String?, rating: String?, services: String?) {
-        self.fullnameLabel.text = fullname
-        self.profilePictureImageView.image = profilePicture
-        self.expandedFullNameLabel.text = fullname
-        self.sitterDescription.text = bio
-        self.collapsedLocationLabel.text = distance
-        self.expandedLocationLabel.text = distance
-        self.collapsedPriceLabel.text = price
-        self.expandedPriceLabel.text = price
-        self.collapsedRatingLabel.text = rating
-        self.expandedRatingLabel.text = rating
-        self.servicesLabel.text = services
+    func update(with detail: ServiceDetail) {
+        self.profilePictureImageView.image = detail.profilePicture
+
+        self.titleLabel.text = detail.title
+        self.expandedTitleLabel.text = detail.title
+
+        if let allowedPets = detail.allowedPets {
+            self.populateAllowedPetImages(with: allowedPets)
+        }
+
+        self.serviceOverview.text = detail.overview
+
+        self.collapsedLocationLabel.text = detail.location
+        self.expandedLocationLabel.text = detail.location
+
+        self.collapsedRatingLabel.text = detail.rating
+        self.expandedRatingLabel.text = detail.rating
+
+        self.collapsedPriceLabel.attributedText = detail.price
+        self.expandedPriceLabel.attributedText = detail.price
+    }
+
+    private func populateAllowedPetImages(with pets: [PetType]) {
+        pets.forEach { (type) in
+            switch type {
+            case .dogs:
+                self.petDogImageView.isHidden = false
+            case .cats:
+                self.petCatImageView.isHidden = false
+            case .birds:
+                self.petBirdImageView.isHidden = false
+            case .reptiles:
+                self.petReptileImageView.isHidden = false
+            case .other:
+                self.petOtherImageView.isHidden = false
+            }
+        }
     }
 }
 
@@ -152,6 +191,7 @@ extension SitterTableViewCell {
         self.profilePictureExpandedBottomConstraint.isActive = false
         self.arrowExpandedLeadingConstraint.isActive = false
         self.arrowExpandedYConstraint.isActive = false
+        self.titleAndPetsExpandedTopConstraint.isActive = false
         
         // Enable constraints
         
@@ -215,6 +255,7 @@ extension SitterTableViewCell {
         self.profilePictureExpandedBottomConstraint.isActive = true
         self.arrowExpandedLeadingConstraint.isActive = true
         self.arrowExpandedYConstraint.isActive = true
+        self.titleAndPetsExpandedTopConstraint.isActive = true
         
         // Update constraints
         
