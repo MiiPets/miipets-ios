@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="10I-ri-u8t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="10I-ri-u8t">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,44 +27,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNs-3t-tMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1033" y="-218"/>
-        </scene>
-        <!--Connect View Controller-->
-        <scene sceneID="etW-yT-3At">
-            <objects>
-                <tableViewController id="B6d-vK-RyF" customClass="ConnectViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="K8z-hO-AqB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="B6d-vK-RyF" id="vDQ-4V-c0V"/>
-                            <outlet property="delegate" destination="B6d-vK-RyF" id="ihu-QF-vfM"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Ipx-gG-yQk"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rQj-IK-oJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-64" y="856"/>
-        </scene>
-        <!--Connect-->
-        <scene sceneID="dxl-4s-xhU">
-            <objects>
-                <navigationController id="tHo-O4-zFA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Connect" image="tabbar_notifications" selectedImage="tabbar_notifications" id="FVz-pD-pOc">
-                        <color key="badgeColor" name="miipets_green"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jcW-8b-DHm">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="B6d-vK-RyF" kind="relationship" relationship="rootViewController" id="9Uh-s8-cXI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SIX-vE-WKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1033" y="856"/>
         </scene>
         <!--Sitter-->
         <scene sceneID="SEX-Vb-v9A">
@@ -116,75 +78,6 @@
             </objects>
             <point key="canvasLocation" x="907" y="142"/>
         </scene>
-        <!--Appointments View Controller-->
-        <scene sceneID="ivt-da-Mgm">
-            <objects>
-                <tableViewController id="hph-h3-W77" customClass="AppointmentsViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Bh9-tb-yrF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="29c-tr-V4Y">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="29c-tr-V4Y" id="OFT-Fn-hRJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="hph-h3-W77" id="1c0-M8-D3S"/>
-                            <outlet property="delegate" destination="hph-h3-W77" id="icG-Zh-XRb"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="OF9-Bi-rxH"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bA3-7A-HSg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2051" y="-1540"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="GY3-jN-tmv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gaE-8m-dTS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="tabbar_home" selectedImage="tabbar_home" id="jrh-q2-L2c">
-                        <color key="badgeColor" name="miipets_green"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wde-Bt-wGe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="3Xo-Cv-pq4" kind="relationship" relationship="rootViewController" id="uBg-b9-vWG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uEe-wu-9x4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="929" y="-583"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="xQe-YB-txA">
-            <objects>
-                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="3Xo-Cv-pq4" customClass="HomeViewController" customModule="MiiPets" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="dJr-Nt-O8X">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="3Xo-Cv-pq4" id="UMu-9G-snh"/>
-                            <outlet property="delegate" destination="3Xo-Cv-pq4" id="j07-aF-wCC"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="F9T-Fg-vAL"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pJ3-Zx-Ios" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1948" y="-583"/>
-        </scene>
         <!--Profile View Controller-->
         <scene sceneID="zc8-Xq-u8I">
             <objects>
@@ -200,27 +93,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkH-eU-InR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-123" y="-1270"/>
-        </scene>
-        <!--Appointments-->
-        <scene sceneID="Jpq-K2-G35">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qf9-uX-de8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Appointments" image="tabbar_appointments" selectedImage="tabbar_appointments" id="mgN-vg-CWk">
-                        <color key="badgeColor" name="miipets_green"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kXT-7M-VAH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hph-h3-W77" kind="relationship" relationship="rootViewController" id="C7r-cs-xr1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GkM-vb-kp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1048" y="-1539"/>
         </scene>
         <!--Profile-->
         <scene sceneID="SO9-SM-Dkj">
@@ -245,9 +117,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabbar_appointments" width="30" height="30"/>
-        <image name="tabbar_home" width="30" height="30"/>
-        <image name="tabbar_notifications" width="30" height="30"/>
         <image name="tabbar_profile" width="30" height="30"/>
         <image name="tabbar_rewards" width="30" height="30"/>
         <namedColor name="miipets_green">
