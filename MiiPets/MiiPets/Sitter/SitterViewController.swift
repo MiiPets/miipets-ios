@@ -29,21 +29,31 @@ class SitterViewController: UITableViewController {
     
     private func configure() {
         self.title = "MiiSitter"
+        self.setBarButtonItems()
+    }
+
+    private func setBarButtonItems() {
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spaceButton.width = 20.0
+
         self.navigationItem.rightBarButtonItems = [self.barbuttonItem(with: UIImage(named: "filter_services_white")!,
                                                                       selectedImage: UIImage(named: "filter_services_green")!),
+                                                   spaceButton,
                                                    self.barbuttonItem(with: UIImage(named: "search_services_white")!,
                                                                       selectedImage: UIImage(named: "search_services_green")!)]
     }
     
     private func barbuttonItem(with image: UIImage, selectedImage: UIImage) -> UIBarButtonItem {
         let button = UIButton(type: .custom)
-        
+
         button.setImage(image, for: .normal)
         button.setImage(selectedImage, for: .highlighted)
-        
-        button.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        
+
         let item = UIBarButtonItem(customView: button)
+        item.customView?.translatesAutoresizingMaskIntoConstraints = false
+        item.customView?.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        item.customView?.widthAnchor.constraint(equalToConstant: 24).isActive = true
+
         return item
     }
 }
