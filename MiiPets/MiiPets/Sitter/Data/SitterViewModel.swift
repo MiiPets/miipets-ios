@@ -32,7 +32,12 @@ extension SitterViewModel {
     }
 
     func serviceProfilePicture(at index: Int) -> UIImage? {
-        return UIImage(data: Data(base64Encoded: self.services[index].gallery!.first!)!)!
+        if let firstGalleryImageString = self.services[index].gallery?.first,
+            let imageData = Data(base64Encoded: firstGalleryImageString) {
+            return UIImage(data: imageData)
+        }
+
+        return nil
     }
 
     func serviceTitle(at index: Int) -> String {

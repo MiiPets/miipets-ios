@@ -1,15 +1,11 @@
 import Foundation
 
 enum LandingScreen {
-    case connect
     case sitter
-    case home
-    case appointments
     case profile
 }
 
-protocol LandingScreenViewModelling {
-}
+protocol LandingScreenViewModelling { }
 
 class LandingScreenViewModelResolver {
     
