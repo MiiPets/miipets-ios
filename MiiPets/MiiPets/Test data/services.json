@@ -1,15 +1,42 @@
 {
     "services": [
         {
-            "id": "12345678900",
-            "userID": "0987654321",
+            "id": "1",
+            "userID": "1",
             "type": "WALKER",
             "title": "Lovely walk on Sea point promanade",
             "price": "200.00",
             "currency": "ZAR",
             "priceRate": "per day",
             "overview": "Does your dog love walks on the beach? Then she/he will love this service! I will take your lovely dog on a walk around the Seapoint promenade (about 2 km). I will adapt to the peace of your dog and return when I see they get too tired. The total time this should take is about 1 hour and I will only charge you for only 1 hour even if it does take a little longer. I will also constantly send updates annd pictures :).",
-            "location": "Sea point, Western Cape",
+            "location": "Cape Town, Western Cape",
+            "gallery": [
+                {
+                    "path": "www.google.com"
+                }
+            ],
+            "allowedPets": [
+                {
+                    "type": "DOGS"
+                }
+            ],
+            "numberOfReviews": 2,
+            "overallRating": 4.3,
+            "businessHours": {
+                "startTime": "08:00",
+                "endTime": "12:00"
+            }
+        },
+        {
+            "id": "2",
+            "userID": "1",
+            "type": "SITTING",
+            "title": "Reliable day sitter",
+            "price": "80.00",
+            "currency": "ZAR",
+            "priceRate": "per hour",
+            "overview": "Does your dog love walks on the beach? Then she/he will love this service! I will take your lovely dog on a walk around the Seapoint promenade (about 2 km). I will adapt to the peace of your dog and return when I see they get too tired. The total time this should take is about 1 hour and I will only charge you for only 1 hour even if it does take a little longer. I will also constantly send updates annd pictures :).",
+            "location": "Secunda, Mpumulanga",
             "gallery": [
                 {
                     "path": "www.google.com"
@@ -32,13 +59,102 @@
                     "type": "OTHER"
                 }
             ],
-            "numberOfReviews": 20,
-            "overallRating": 4.5,
+            "numberOfReviews": 9,
+            "overallRating": 4.9,
             "businessHours": {
                 "startTime": "08:00",
                 "endTime": "17:00"
-            },
-            "reviews": "WARNING: Not sure what this looks like yet."
+            }
+        },
+        {
+            "id": "3",
+            "userID": "2",
+            "type": "BOARDING",
+            "title": "Best boarding in the whole of the Western Cape",
+            "price": "320.00",
+            "currency": "ZAR",
+            "priceRate": "per day",
+            "overview": "Does your dog love walks on the beach? Then she/he will love this service! I will take your lovely dog on a walk around the Seapoint promenade (about 2 km). I will adapt to the peace of your dog and return when I see they get too tired. The total time this should take is about 1 hour and I will only charge you for only 1 hour even if it does take a little longer. I will also constantly send updates annd pictures :).",
+            "location": "Burgundy Estate, Western Cape",
+            "gallery": [
+                {
+                    "path": "www.google.com"
+                }
+            ],
+            "allowedPets": [
+                {
+                    "type": "CATS"
+                }
+            ],
+            "numberOfReviews": 0,
+            "overallRating": 3.2,
+            "businessHours": {
+                "startTime": "08:00",
+                "endTime": "09:00"
+            }
+        },
+        {
+            "id": "4",
+            "userID": "2",
+            "type": "DAYCARE",
+            "title": "Accrediated daycare specialist",
+            "price": "20.00",
+            "currency": "ZAR",
+            "priceRate": "per hour",
+            "overview": "Does your dog love walks on the beach? Then she/he will love this service! I will take your lovely dog on a walk around the Seapoint promenade (about 2 km). I will adapt to the peace of your dog and return when I see they get too tired. The total time this should take is about 1 hour and I will only charge you for only 1 hour even if it does take a little longer. I will also constantly send updates annd pictures :).",
+            "location": "Sea point, Western Cape",
+            "gallery": [
+                {
+                    "path": "www.google.com"
+                }
+            ],
+            "allowedPets": [
+                {
+                    "type": "DOGS"
+                },
+                {
+                    "type": "CATS"
+                }
+            ],
+            "numberOfReviews": 223,
+            "overallRating": 4.9,
+            "businessHours": {
+                "startTime": "08:00",
+                "endTime": "20:00"
+            }
+        },
+        {
+            "id": "5",
+            "userID": "3",
+            "type": "SITTING",
+            "title": "House sitter in the Burgundy Estate area",
+            "price": "500.00",
+            "currency": "ZAR",
+            "priceRate": "per day",
+            "overview": "Does your dog love walks on the beach? Then she/he will love this service! I will take your lovely dog on a walk around the Seapoint promenade (about 2 km). I will adapt to the peace of your dog and return when I see they get too tired. The total time this should take is about 1 hour and I will only charge you for only 1 hour even if it does take a little longer. I will also constantly send updates annd pictures :).",
+            "location": "Cape Town, Western Cape",
+            "gallery": [
+                {
+                    "path": "www.google.com"
+                }
+            ],
+            "allowedPets": [
+                {
+                    "type": "DOGS"
+                },
+                {
+                    "type": "CATS"
+                },
+                {
+                    "type": "BIRDS"
+                }
+            ],
+            "numberOfReviews": 1,
+            "overallRating": 4.1,
+            "businessHours": {
+                "startTime": "08:00",
+                "endTime": "20:00"
+            }
         }
     ]
 }
