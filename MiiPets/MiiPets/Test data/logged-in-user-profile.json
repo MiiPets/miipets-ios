@@ -1,6 +1,6 @@
 {
     "user": {
-        "userID": "1234",
+        "userID": "7",
         "name": "Stefan",
         "surname": "Bouwer",
         "email": "bleh@gmail.com",
@@ -11,7 +11,7 @@
         "bio": "Some interesting bio the logged in entity",
         "services": [
             {
-                "id": "12345678900",
+                "id": "10",
                 "type": "WALKER",
                 "title": "Lovely walk on Sea point promanade",
                 "price": "200.00",
@@ -34,8 +34,7 @@
                 "businessHours": {
                     "startTime": "08:00",
                     "endTime": "17:00"
-                },
-                "reviews": "WARNING: Not sure what this looks like yet."
+                }
             }
         ]
     }
