@@ -13,7 +13,10 @@
 		860DAE932486AADD0078A789 /* logged-in-user-profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DAE922486AADD0078A789 /* logged-in-user-profile.json */; };
 		860DAE952486AD6D0078A789 /* searched-user.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DAE942486AD6D0078A789 /* searched-user.json */; };
 		860DAE972486ADE90078A789 /* searched-service.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DAE962486ADE90078A789 /* searched-service.json */; };
-		869C280A23BD347D0095DF5E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C280923BD347D0095DF5E /* Models.swift */; };
+		860DAE9B2486CDB90078A789 /* MiiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DAE9A2486CDB90078A789 /* MiiNetwork.swift */; };
+		860DAE9D2486CE560078A789 /* MiiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DAE9C2486CE560078A789 /* MiiCache.swift */; };
+		860DAEA42486DB2E0078A789 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DAEA32486DB2E0078A789 /* ServiceModel.swift */; };
+		860DAEA62486DB780078A789 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DAEA52486DB780078A789 /* UserModel.swift */; };
 		869C288923BD39D40095DF5E /* SitterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C288723BD39D40095DF5E /* SitterTableViewCell.swift */; };
 		869C288A23BD39D40095DF5E /* SitterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869C288823BD39D40095DF5E /* SitterTableViewCell.xib */; };
 		869C288C23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C288B23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift */; };
@@ -57,7 +60,10 @@
 		860DAE922486AADD0078A789 /* logged-in-user-profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "logged-in-user-profile.json"; sourceTree = "<group>"; };
 		860DAE942486AD6D0078A789 /* searched-user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "searched-user.json"; sourceTree = "<group>"; };
 		860DAE962486ADE90078A789 /* searched-service.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "searched-service.json"; sourceTree = "<group>"; };
-		869C280923BD347D0095DF5E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		860DAE9A2486CDB90078A789 /* MiiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiiNetwork.swift; sourceTree = "<group>"; };
+		860DAE9C2486CE560078A789 /* MiiCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiiCache.swift; sourceTree = "<group>"; };
+		860DAEA32486DB2E0078A789 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		860DAEA52486DB780078A789 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		869C288723BD39D40095DF5E /* SitterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterTableViewCell.swift; sourceTree = "<group>"; };
 		869C288823BD39D40095DF5E /* SitterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SitterTableViewCell.xib; sourceTree = "<group>"; };
 		869C288B23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndSubviewHeaderView.swift; sourceTree = "<group>"; };
@@ -126,13 +132,37 @@
 			path = "Test data";
 			sourceTree = "<group>";
 		};
-		869C288523BD39A30095DF5E /* Data */ = {
+		860DAE982486CD790078A789 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				869C280923BD347D0095DF5E /* Models.swift */,
+				860DAE9A2486CDB90078A789 /* MiiNetwork.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		860DAE992486CD870078A789 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				860DAE9C2486CE560078A789 /* MiiCache.swift */,
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
+		860DAEA72486E0D10078A789 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				860DAEA32486DB2E0078A789 /* ServiceModel.swift */,
+				860DAEA52486DB780078A789 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		869C288523BD39A30095DF5E /* View models */ = {
+			isa = PBXGroup;
+			children = (
 				86FED42623CD0B4D00059A81 /* SitterViewModel.swift */,
 			);
-			path = Data;
+			path = "View models";
 			sourceTree = "<group>";
 		};
 		869C288623BD39AB0095DF5E /* View */ = {
@@ -197,8 +227,11 @@
 				86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */,
 				86FA035122E368AC0047905C /* LaunchScreen.storyboard */,
 				86FA037122E3793E0047905C /* Main.storyboard */,
+				860DAE982486CD790078A789 /* Networking */,
+				860DAE992486CD870078A789 /* Caching */,
+				860DAEA72486E0D10078A789 /* Models */,
 				86FA036C22E36E360047905C /* Profile */,
-				86FA036922E36DEB0047905C /* Sitter */,
+				86FA036922E36DEB0047905C /* Services */,
 				86EA6D2122E4B15900B2578D /* Categories */,
 				86CE3AD72332AD9700399104 /* UI components */,
 				860DAE8D2486A85F0078A789 /* Test data */,
@@ -215,14 +248,14 @@
 			path = MiiPetsTests;
 			sourceTree = "<group>";
 		};
-		86FA036922E36DEB0047905C /* Sitter */ = {
+		86FA036922E36DEB0047905C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				869C288523BD39A30095DF5E /* Data */,
+				869C288523BD39A30095DF5E /* View models */,
 				86FA037522E379B20047905C /* SitterViewController.swift */,
 				869C288623BD39AB0095DF5E /* View */,
 			);
-			path = Sitter;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		86FA036C22E36E360047905C /* Profile */ = {
@@ -419,11 +452,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860DAEA42486DB2E0078A789 /* ServiceModel.swift in Sources */,
 				86FED42723CD0B4D00059A81 /* SitterViewModel.swift in Sources */,
 				869EDA1922E79838007F50BC /* UIColor+Extensions.swift in Sources */,
 				869C288C23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift in Sources */,
+				860DAE9D2486CE560078A789 /* MiiCache.swift in Sources */,
 				86CE3AD92332ADCE00399104 /* RoundedCardView.swift in Sources */,
 				86FA036F22E374910047905C /* LandingTabBarControllerViewController.swift in Sources */,
+				860DAE9B2486CDB90078A789 /* MiiNetwork.swift in Sources */,
 				869C289023BE1AFB0095DF5E /* UIView+Extensions.swift in Sources */,
 				86EA6D2322E4B18100B2578D /* UIViewController+Extensions.swift in Sources */,
 				86AF2BAE2397133E00CAD913 /* UITableView+Extensions.swift in Sources */,
@@ -431,8 +467,8 @@
 				86CE3AE12332C61900399104 /* LandingTitleHeaderFooterView.swift in Sources */,
 				86FA034922E368AB0047905C /* AppDelegate.swift in Sources */,
 				86FA037C22E379FC0047905C /* ProfileViewController.swift in Sources */,
-				869C280A23BD347D0095DF5E /* Models.swift in Sources */,
 				86FED42923CD0BFA00059A81 /* LandingScreensHelper.swift in Sources */,
+				860DAEA62486DB780078A789 /* UserModel.swift in Sources */,
 				869C288923BD39D40095DF5E /* SitterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
