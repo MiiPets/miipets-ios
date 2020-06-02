@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		40DE20D2962C780B022A2058 /* Pods_MiiPetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EFC6F81370BA40A6130C93 /* Pods_MiiPetsTests.framework */; };
 		4FB5CD7D2F5C87761817DD76 /* Pods_MiiPets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E02636AFDAC6738018B3280 /* Pods_MiiPets.framework */; };
+		860DAE912486AA230078A789 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DAE902486AA230078A789 /* services.json */; };
+		860DAE932486AADD0078A789 /* logged-in-user-profile.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DAE922486AADD0078A789 /* logged-in-user-profile.json */; };
+		860DAE952486AD6D0078A789 /* searched-user.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DAE942486AD6D0078A789 /* searched-user.json */; };
+		860DAE972486ADE90078A789 /* searched-service.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DAE962486ADE90078A789 /* searched-service.json */; };
 		869C280A23BD347D0095DF5E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C280923BD347D0095DF5E /* Models.swift */; };
 		869C288923BD39D40095DF5E /* SitterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C288723BD39D40095DF5E /* SitterTableViewCell.swift */; };
 		869C288A23BD39D40095DF5E /* SitterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869C288823BD39D40095DF5E /* SitterTableViewCell.xib */; };
@@ -49,6 +53,10 @@
 		1E02636AFDAC6738018B3280 /* Pods_MiiPets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiiPets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAEA55B922510DFD165352E /* Pods-MiiPets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPets.release.xcconfig"; path = "Target Support Files/Pods-MiiPets/Pods-MiiPets.release.xcconfig"; sourceTree = "<group>"; };
 		774C1266DD1715AD877786FA /* Pods-MiiPets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiiPets.debug.xcconfig"; path = "Target Support Files/Pods-MiiPets/Pods-MiiPets.debug.xcconfig"; sourceTree = "<group>"; };
+		860DAE902486AA230078A789 /* services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
+		860DAE922486AADD0078A789 /* logged-in-user-profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "logged-in-user-profile.json"; sourceTree = "<group>"; };
+		860DAE942486AD6D0078A789 /* searched-user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "searched-user.json"; sourceTree = "<group>"; };
+		860DAE962486ADE90078A789 /* searched-service.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "searched-service.json"; sourceTree = "<group>"; };
 		869C280923BD347D0095DF5E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		869C288723BD39D40095DF5E /* SitterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterTableViewCell.swift; sourceTree = "<group>"; };
 		869C288823BD39D40095DF5E /* SitterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SitterTableViewCell.xib; sourceTree = "<group>"; };
@@ -105,6 +113,17 @@
 				11EFC6F81370BA40A6130C93 /* Pods_MiiPetsTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		860DAE8D2486A85F0078A789 /* Test data */ = {
+			isa = PBXGroup;
+			children = (
+				860DAE962486ADE90078A789 /* searched-service.json */,
+				860DAE942486AD6D0078A789 /* searched-user.json */,
+				860DAE922486AADD0078A789 /* logged-in-user-profile.json */,
+				860DAE902486AA230078A789 /* services.json */,
+			);
+			path = "Test data";
 			sourceTree = "<group>";
 		};
 		869C288523BD39A30095DF5E /* Data */ = {
@@ -173,15 +192,16 @@
 				86FA034822E368AB0047905C /* AppDelegate.swift */,
 				869EDA1622E79710007F50BC /* Assets.xcassets */,
 				86FA037D22E46BA70047905C /* Colors.xcassets */,
-				86FA035122E368AC0047905C /* LaunchScreen.storyboard */,
 				86FA035422E368AC0047905C /* Info.plist */,
-				86FA037122E3793E0047905C /* Main.storyboard */,
-				86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */,
 				86FED42823CD0BFA00059A81 /* LandingScreensHelper.swift */,
+				86FA036D22E374910047905C /* LandingTabBarControllerViewController.swift */,
+				86FA035122E368AC0047905C /* LaunchScreen.storyboard */,
+				86FA037122E3793E0047905C /* Main.storyboard */,
 				86FA036C22E36E360047905C /* Profile */,
 				86FA036922E36DEB0047905C /* Sitter */,
 				86EA6D2122E4B15900B2578D /* Categories */,
 				86CE3AD72332AD9700399104 /* UI components */,
+				860DAE8D2486A85F0078A789 /* Test data */,
 			);
 			path = MiiPets;
 			sourceTree = "<group>";
@@ -309,10 +329,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				869C288A23BD39D40095DF5E /* SitterTableViewCell.xib in Resources */,
+				860DAE912486AA230078A789 /* services.json in Resources */,
+				860DAE952486AD6D0078A789 /* searched-user.json in Resources */,
 				86FA035322E368AC0047905C /* LaunchScreen.storyboard in Resources */,
+				860DAE932486AADD0078A789 /* logged-in-user-profile.json in Resources */,
 				86FA037E22E46BA70047905C /* Colors.xcassets in Resources */,
 				869EDA1722E79710007F50BC /* Assets.xcassets in Resources */,
 				869C288E23BDFE2D0095DF5E /* TitleAndSubviewHeaderView.xib in Resources */,
+				860DAE972486ADE90078A789 /* searched-service.json in Resources */,
 				86FA037222E3793E0047905C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

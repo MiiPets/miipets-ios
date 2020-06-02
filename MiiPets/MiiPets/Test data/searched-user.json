@@ -1,0 +1,18 @@
+{
+    "user": {
+        "userID": "1234",
+        "name": "Stefan",
+        "surname": "Bouwer",
+        "email": "bleh@gmail.com",
+        "relationship": "OWNER",
+        "acceptedTsAndCs": true,
+        "acceptedPrivacy": true,
+        "profilePicturePath": "www.google.com",
+        "bio": "Some interesting bio the logged in entity",
+        "associatedServices": [
+            "1234567890",
+            "0987654321",
+            "0987123456"
+        ]
+    }
+}

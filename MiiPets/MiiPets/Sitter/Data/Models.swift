@@ -55,21 +55,21 @@ struct Review {
 // MARK: - Types
 
 enum UserRelationship: String {
-    case owner = "Owner"
-    case sitter = "Sitter"
+    case owner = "OWNER"
+    case sitter = "SITTER"
 }
 
 enum ServiceType: String {
-    case walker = "Walker"
-    case boarding = "Boarding"
-    case houseSitting = "House sitting"
-    case daycare = "Daycare"
+    case walker = "WALKER"
+    case boarding = "BOARDING"
+    case houseSitting = "SITTING"
+    case daycare = "DAYCARE"
 }
 
 enum PetType: String {
-    case dogs = "Dogs"
-    case cats = "Cats"
-    case birds = "Birds"
-    case reptiles = "Reptiles"
-    case other = "Other"
+    case dogs = "DOGS"
+    case cats = "CATS"
+    case birds = "BIRDS"
+    case reptiles = "REPTILES"
+    case other = "OTHER"
 }
