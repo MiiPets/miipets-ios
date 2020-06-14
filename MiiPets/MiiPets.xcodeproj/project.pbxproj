@@ -17,6 +17,7 @@
 		860DAE9D2486CE560078A789 /* MiiCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DAE9C2486CE560078A789 /* MiiCache.swift */; };
 		860DAEA42486DB2E0078A789 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DAEA32486DB2E0078A789 /* ServiceModel.swift */; };
 		860DAEA62486DB780078A789 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DAEA52486DB780078A789 /* UserModel.swift */; };
+		866CC17F24951E0E0058B356 /* ServiceParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CC17E24951E0E0058B356 /* ServiceParsingTests.swift */; };
 		869C288923BD39D40095DF5E /* SitterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C288723BD39D40095DF5E /* SitterTableViewCell.swift */; };
 		869C288A23BD39D40095DF5E /* SitterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869C288823BD39D40095DF5E /* SitterTableViewCell.xib */; };
 		869C288C23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869C288B23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift */; };
@@ -64,6 +65,7 @@
 		860DAE9C2486CE560078A789 /* MiiCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiiCache.swift; sourceTree = "<group>"; };
 		860DAEA32486DB2E0078A789 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		860DAEA52486DB780078A789 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		866CC17E24951E0E0058B356 /* ServiceParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceParsingTests.swift; sourceTree = "<group>"; };
 		869C288723BD39D40095DF5E /* SitterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitterTableViewCell.swift; sourceTree = "<group>"; };
 		869C288823BD39D40095DF5E /* SitterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SitterTableViewCell.xib; sourceTree = "<group>"; };
 		869C288B23BDFE040095DF5E /* TitleAndSubviewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndSubviewHeaderView.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				86FA035D22E368AC0047905C /* MiiPetsTests.swift */,
 				86FA035F22E368AC0047905C /* Info.plist */,
+				866CC17E24951E0E0058B356 /* ServiceParsingTests.swift */,
 			);
 			path = MiiPetsTests;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				866CC17F24951E0E0058B356 /* ServiceParsingTests.swift in Sources */,
 				86FA035E22E368AC0047905C /* MiiPetsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -609,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

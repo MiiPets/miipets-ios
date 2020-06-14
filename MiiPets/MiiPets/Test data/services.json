@@ -12,7 +12,7 @@
             "location": "Cape Town, Western Cape",
             "gallery": [
                 {
-                    "path": "www.google.com"
+                    "path": "test-1"
                 }
             ],
             "allowedPets": [
@@ -39,7 +39,7 @@
             "location": "Secunda, Mpumulanga",
             "gallery": [
                 {
-                    "path": "www.google.com"
+                    "path": "test-2"
                 }
             ],
             "allowedPets": [
@@ -78,7 +78,7 @@
             "location": "Burgundy Estate, Western Cape",
             "gallery": [
                 {
-                    "path": "www.google.com"
+                    "path": "test-3"
                 }
             ],
             "allowedPets": [
@@ -105,7 +105,7 @@
             "location": "Sea point, Western Cape",
             "gallery": [
                 {
-                    "path": "www.google.com"
+                    "path": "test-4"
                 }
             ],
             "allowedPets": [
@@ -135,7 +135,7 @@
             "location": "Cape Town, Western Cape",
             "gallery": [
                 {
-                    "path": "www.google.com"
+                    "path": "test-5"
                 }
             ],
             "allowedPets": [

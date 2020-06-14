@@ -31,8 +31,30 @@ class MiiCache {
 
 fileprivate class SomeCacher: Cacher {
 
+    /// We should remove this once we actually start performing service calls and caching
+    private enum ModelName: String {
+        case services = "services"
+
+        static func responseFileName<T: Decodable>(for objectType: T.Type) -> ModelName? {
+            if objectType == Services.self {
+                return .services
+            }
+            return nil
+        }
+    }
+
     func fetch<T>(_ objectType: T.Type, primaryKey: String?) -> T? where T : Decodable {
-        return nil
+        let bundle = Bundle(for: MiiCache.self)
+
+        guard let file = bundle.url(forResource: ModelName.responseFileName(for: objectType)?.rawValue, withExtension: "json")?.path else { return nil }
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: file)) else { return nil }
+
+        do {
+            return try JSONDecoder().decode(objectType, from: data)
+        } catch let error {
+            debugPrint("Error trying to decode model: \(error.localizedDescription)")
+            return nil
+        }
     }
 
     func addOrUpdate<T>(_ object: T, primaryKey: String?, completion: @escaping (_ error: Error?) -> ()) where T : Decodable {

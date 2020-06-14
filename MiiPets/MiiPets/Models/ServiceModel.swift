@@ -17,6 +17,10 @@ enum PetType: String {
 
 // MARK: - Models
 
+struct Services: Decodable {
+    let services: [Service]
+}
+
 struct Service: Decodable {
     let serviceID: String
     let userID: String
@@ -31,7 +35,7 @@ struct Service: Decodable {
     let allowedPets: [Pet]?
     let numberOfReviews: Int?
     let overallRating: Double?
-    let businesHours: [BusinessHours]?
+    let businessHours: BusinessHours?
     let reviews: String?
 
     // MARK: CodingKeys
@@ -50,7 +54,7 @@ struct Service: Decodable {
         case allowedPets
         case numberOfReviews
         case overallRating
-        case businesHours
+        case businessHours
         case reviews
     }
 

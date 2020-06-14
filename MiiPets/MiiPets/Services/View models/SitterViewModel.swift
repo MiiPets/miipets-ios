@@ -18,6 +18,18 @@ class SitterViewModel: NSObject {
     init(delegate: SitterLandingDelegate) {
         self.delegate = delegate
         super.init()
+
+        fetchServices()
+    }
+}
+
+// MARK: - Fetching anc caching
+
+extension SitterViewModel {
+
+    private func fetchServices() {
+        guard let servicesObject = MiiCache.cacher.fetch(Services.self, primaryKey: "loggedInUserID") else { return }
+        services.append(contentsOf: servicesObject.services)
     }
 }
 
@@ -30,22 +42,20 @@ extension SitterViewModel {
     }
 
     func serviceProfilePicture(at index: Int) -> UIImage? {
-//        if let firstGalleryImageString = self.services[index].gallery?.first,
-//            let imageData = Data(base64Encoded: firstGalleryImageString) {
-//            return UIImage(data: imageData)
-//        }
+        if let firstGallery = self.services[index].gallery?.first {
+            return UIImage(named: firstGallery.path)
+        }
 
         return nil
     }
 
     func serviceTitle(at index: Int) -> String {
-        return ""
-//        return self.services[index].title
+        return self.services[index].title ?? "--"
     }
 
     func servicePetsAllowed(at index: Int) -> [PetType]? {
-        return nil
-//        return self.services[index].allowedPets
+        guard let pets = self.services[index].allowedPets else { return nil }
+        return pets.compactMap({ $0.type })
     }
 
     func serviceOverview(at index: Int) -> String? {
@@ -57,19 +67,22 @@ extension SitterViewModel {
     }
 
     func servicePricing(at index: Int) -> NSAttributedString? {
-        return nil
-//        let priceMutableAttributedString = NSMutableAttributedString(string: self.services[index].price,
-//                                                       attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 19.0),
-//                                                                    NSAttributedString.Key.foregroundColor: UIColor.black])
-//        let extraSpaceAttributedString = NSAttributedString(string: " ")
-//        let priceRateAttributedString = NSAttributedString(string: self.services[index].priceRate,
-//                                                           attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0),
-//                                                           NSAttributedString.Key.foregroundColor: UIColor.black])
-//
-//        priceMutableAttributedString.append(extraSpaceAttributedString)
-//        priceMutableAttributedString.append(priceRateAttributedString)
-//
-//        return priceMutableAttributedString
+        if let price = self.services[index].price, let rate = self.services[index].priceRate {
+            let priceMutableAttributedString = NSMutableAttributedString(string: price,
+                                                                         attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 19.0),
+                                                                                      NSAttributedString.Key.foregroundColor: UIColor.black])
+            let extraSpaceAttributedString = NSAttributedString(string: " ")
+            let priceRateAttributedString = NSAttributedString(string: rate,
+                                                               attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0),
+                                                                            NSAttributedString.Key.foregroundColor: UIColor.black])
+
+            priceMutableAttributedString.append(extraSpaceAttributedString)
+            priceMutableAttributedString.append(priceRateAttributedString)
+
+            return priceMutableAttributedString
+        }
+
+        return NSAttributedString(string: "N/A")
     }
 
     func serviceRating(at index: Int) -> String? {
